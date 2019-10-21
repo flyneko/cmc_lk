@@ -1,0 +1,253 @@
+---
+title: Счет
+---
+{% extends "layouts/_layout.nunj" %}
+{% block content %}
+    <div class="box">
+        <div class="m-b-10">
+            <a href="#" class="link-underline"><span>Вернуться назад</span></a>
+        </div>
+
+        <h1 class="h2 m-b-5">счет №18 от 4 июля</h1>
+
+        <div class="js-tabs">
+            {% set tabs = ['Заполнение', 'Просмотр'] %}
+            <div class="tabs tabs--lg">
+                <ul class="tabs__list">
+                    <li class="tabs__bar" data-tabs="bar"></li>
+                    {% for i in tabs %}
+                        <li class="tabs__item">
+                            <a data-tabs="link" class="tabs__link {% if loop.first %}is-active{% endif %}" href="#{{ i }}"><span>{{ i | safe }}</span></a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div id="Заполнение" data-tabs="pane" class="is-active">
+                <form autocomplete="off">
+                    <div class="form__row">
+                        <div class="row row-sm align-items-center">
+                            <div class="col-xs-3 col-12"><label class="form__label m-b-0">Номер и дата документа:</label></div>
+                            <div class="col-xs-5 col-12">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <input class="input">
+                                    </div>
+                                    <div class="col-5">
+                                        <div class="complex-input">
+                                            <input class="input js-datepicker">
+                                            <div class="complex-input__icon"> {{ mixins.icon('calendar') }} </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form__row">
+                        <div class="row row-sm align-items-center">
+                            <div class="col-xs-3 col-12"><label class="form__label m-b-0">Клиент:</label></div>
+                            <div class="col-xs-5 col-12">
+                                <input class="input" type="text" placeholder="№">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form__row">
+                        <div class="row row-sm">
+                            <div class="col-xs-3 col-12"><label class="form__label m-b-0">Расчетный счет:	</label></div>
+                            <div class="col-xs-5 col-12"> 489074577350738053 в Алма-Аты N63477 ПАО Халык Банк</div>
+                        </div>
+                    </div>
+
+                    <div class="form__row">
+                        <div class="row row-sm align-items-center">
+                            <div class="col-xs-3 col-12"><label class="form__label m-b-0">Выставлен по договору:</label></div>
+                            <div class="col-xs-5 col-12">
+                                <input class="input" type="text" placeholder="№">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form__row">
+                        <div class="row row-sm align-items-center">
+                            <div class="col-xs-3 col-12"><label class="form__label m-b-0">Оплатить в течение:</label></div>
+                            <div class="col-xs-5 col-12">
+                                <div class="row row-sm align-items-center">
+                                    <div class="col-auto">
+                                        <input style="width: 80px;" class="input js-spinner">
+                                    </div>
+                                    <div class="col-auto">дней</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form__row">
+                        <div class="row">
+                            <div class="col-3 d-none d-xs-block"></div>
+                            <div class="col-9">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col-auto">
+                                        <a href="#" class="add-link">{{ mixins.icon('plus') }}<span>Дополнительная инфорация, НДС, Внести скидку</span></a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="#" class="link text-blue">{{ mixins.icon('xls') }}<span>Загрузить список XLS</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form__row">
+                        <div class="table-tabulator m-b-10">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th width="60" class="text-left">Тип</th>
+                                    <th class="text-left">Наименование</th>
+                                    <th width="70">Ед. изм.</th>
+                                    <th width="70">Кол-во</th>
+                                    <th width="70">Цена</th>
+                                    <th width="70">Сумма</th>
+                                    <th width="40"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for i in range(1, 4) %}
+                                    <tr>
+                                        <td>{{ i }}</td>
+                                        <td class="text-blue text-left">Не указан</td>
+                                        <td><input class="input"></td>
+                                        <td><input class="input"></td>
+                                        <td><input class="input"></td>
+                                        <td><input class="input"></td>
+                                        <td>0,00</td>
+                                        <td><a href="#">{{ mixins.icon('trash', 'fill: #b5bbc1') }}</a></td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <a href="#" class="add-link">{{ mixins.icon('plus') }}<span>Строка</span></a>
+                    </div>
+
+                    <div class="form__row">
+                        <div class="row row-sm align-items-center">
+                            <div class="col-auto">
+                                <div class="btn-group">
+                                    <a href="#" class="btn" aria-expanded="false"><span>Сохранить</span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        {% for i in ['Счет', 'Накладная', 'Акт'] %}
+                                            <li class="dropdown-menu__item">
+                                                <a href="#" class="dropdown-menu__link">{{ i }}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <button type="submit" class="btn"><span>сохранить и создать новое</span></button>
+                            </div>
+                            <div class="col-auto">
+                                <a href="#" class="link-underline"><span>Отменить</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div id="Просмотр" data-tabs="pane">
+                <div class="row-border p-t-0 m-b-30">
+                    <div class="row">
+                        <div class="col-12 col-sm-9">
+                            <img style="width: 100%;" src="./temp/bill.png">
+                        </div>
+                        <div class="col-12 col-sm-3">
+                            <div class="m-b-30">
+                                Ссылка на оплату
+                                <input class="input" value="http://cmc.kz/?ejy3tg23g114ss">
+                            </div>
+
+                            <div class="m-b-30">
+                                {{ chunks.switcher({ text: 'Печать и подпись' }) }}
+                            </div>
+
+                            <div class="m-b-30 text">
+                                <p>
+                                    Сумма: <span class="text-black">9 990 <i class="tenge"></i></span> <br>
+                                    Оплачено: <span class="text-black">9 990 <i class="tenge"></i></span>
+                                </p>
+                            </div>
+
+                            <div class="m-b-30 text">
+                                <p>
+                                    Создать на основании: <br>
+                                    <a href="#" class="add-link">{{ mixins.icon('plus') }}<span>Акт, Накладная, Счет-фактура</span></a>
+                                </p>
+                            </div>
+
+                            <div class="m-b-30 text">
+                                <p>
+                                    Связанные документы: <br>
+                                    <a href="#" class="text-blue">Договор №124 от 4 мая 2019г .</a>
+                                </p>
+                            </div>
+
+                            <div class="text">
+                                <p>
+                                    Так же по договору №124: <br>
+                                    <a href="#" class="text-blue">Счет №18 от 4 июля 2019 г.</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-between">
+                    <div class="col-xs col-12">
+                        <div class="row row-sm align-items-center">
+                            <div class="col-auto">
+                                <a href="#" class="btn">{{ mixins.icon('envelope') }} <span>отправить</span></a>
+                            </div>
+                            <div class="col-auto">
+                                <div class="btn-group">
+                                    <a href="#" class="btn" aria-expanded="false">{{ mixins.icon('download') }}<span>Скачать</span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        {% for i in ['Счет', 'Накладная', 'Акт'] %}
+                                            <li class="dropdown-menu__item">
+                                                <a href="#" class="dropdown-menu__link">{{ i }}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <a href="#" class="btn">{{ mixins.icon('printer') }} <span>Печать</span></a>
+                            </div>
+                            <div class="col-auto">
+                                <a href="#" class="btn">{{ mixins.icon('docs-copy') }} <span>Копировать</span></a>
+                            </div>
+                            <div class="col-auto">
+                                <a href="#" class="btn">{{ mixins.icon('refresh') }}</a>
+                            </div>
+                            <div class="col-auto">
+                                <a href="#" class="btn">{{ mixins.icon('trash') }} <span>удалить</span></a>
+                            </div>
+                            <div class="col-auto">
+                                <a href="#" class="link-underline"><span>Закрыть</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-auto col-12 text-right">
+                        Изменен: <br>
+                        grafara@mail.ru <br>
+                        11.04.2019  11:23
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

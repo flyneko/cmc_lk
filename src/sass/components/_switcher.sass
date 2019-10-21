@@ -1,0 +1,33 @@
+.switcher
+  display: inline-flex
+  align-items: center
+  justify-content: space-between
+  margin: 0 -8px
+  cursor: pointer
+  input
+    display: none
+  input:checked ~ &__i
+    background: $style-color2
+    border-color: $style-color2
+    &:before
+      background: #ffffff
+      border-color: #ffffff
+      left: 20px
+  &__i
+    flex-shrink: 0
+    width: 37px
+    height: 20px
+    border: 1px solid #d3dae1
+    border-radius: 10px
+    margin: 0 8px
+    position: relative
+    &:before
+      position: absolute
+      width: 12px
+      height: 12px
+      border-radius: 50%
+      content: ''
+      border: 1px solid #d3dae1
+      left: 4px
+      top: 3px
+      transition: all ease .25s

@@ -1,0 +1,20 @@
+.actions
+  display: inline-flex
+  margin: 0 -3px
+  align-items: center
+  &__item
+    position: relative
+    padding: 0 3px
+    .dropdown-menu
+      margin-top: 10px
+      &.dropdown-menu--right
+        &:before
+          right: 5px
+  &__link
+    display: block
+    //
+    &:hover .icon, &.tippy-active .icon
+      fill: $style-color2
+    .icon
+      font-size: 20px
+      fill: #b0b5b7

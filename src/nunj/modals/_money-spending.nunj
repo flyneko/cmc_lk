@@ -1,0 +1,154 @@
+<div class="modal" id="money-spending">
+    <h2 class="h2 modal__title">Расходы по основному виду деятельности</h2>
+    <form autocomplete="off">
+        <div class="form__row">
+            <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Деньги потрачены:</label></div>
+                <div class="col-xs-8 col-12">
+                    <div class="row">
+                        <div class="col-auto">
+                            {{ chunks.radio({ text: 'С расчетного счета' }) }}
+                        </div>
+                        <div class="col-auto">
+                            {{ chunks.radio({ text: 'Наличными' }) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form__row">
+            <div class="row row-sm">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Расчетный счет:	</label></div>
+                <div class="col-xs-8 col-12">
+                    489074577350738053 в Алма-Аты N63477 ПАО
+                    Халык Банк
+                </div>
+            </div>
+        </div>
+        <div class="form__row">
+            <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Кому:</label></div>
+                <div class="col-xs-8 col-12">
+                    <input class="input" type="text" placeholder="ФИО контрагента">
+                </div>
+            </div>
+        </div>
+        <div class="form__row">
+            <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Расчетный счет контрагента:	</label></div>
+                <div class="col-xs-8 col-12">489074577350738053 <i class="tenge"></i></div>
+            </div>
+        </div>
+        <div class="form__row">
+            <div class="row row-sm">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Списание:	</label></div>
+                <div class="col-xs-8 col-12">
+                    <div class="row row-sm">
+                        <div class="col-12">
+                            {{ chunks.radio({ text: 'С потверждающим документом' }) }}
+                        </div>
+                        <div class="col-12">
+                            {{ chunks.radio({ text: 'Учитывать по дате оплаты' }) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form__row">
+            <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Потверждающие накладные:</label></div>
+                <div class="col-xs-8 col-12">
+                    <div class="row row-sm">
+                        <div class="col-auto">Нет</div>
+                        <div class="col-auto"><a href="#" class="text-blue">Добавить накладную</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form__row m-b-40">
+            <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Потверждающие акты:	</label></div>
+                <div class="col-xs-8 col-12">
+                    <div class="row row-sm">
+                        <div class="col-auto">Да</div>
+                        <div class="col-auto"><a href="#" class="text-blue">Добавить акт</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form__row">
+            <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">По договору:</label></div>
+                <div class="col-xs-8 col-12">
+                    <input class="input" type="text" placeholder="№">
+                </div>
+            </div>
+        </div>
+        <div class="form__row">
+            <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Сумма:</label></div>
+                <div class="col-xs-8 col-12">
+                    <div class="complex-input">
+                        <input class="input">
+                        <div class="complex-input__icon"><i class="tenge"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form__row">
+            <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Дата:</label></div>
+                <div class="col-xs-8 col-12">
+                    <div class="complex-input">
+                        <input class="input js-datepicker">
+                        <div class="complex-input__icon">
+                            {{ mixins.icon('calendar') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form__row">
+            <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Номер платежного паручения:</label></div>
+                <div class="col-xs-8 col-12">
+                    <input class="input" type="text" placeholder="№">
+                </div>
+            </div>
+        </div>
+        <div class="form__row">
+            <div class="row row-sm">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Назначение платежа:</label></div>
+                <div class="col-xs-8 col-12">
+                    <textarea class="input"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="form__row">
+            <div class="row">
+                <div class="col-xs-4 col-12">
+
+                </div>
+                <div class="col-xs-8 col-12">
+                    <div class="row">
+                        <div class="col-xs-4 col-12">
+                            <div class="btn-group">
+                                <a href="#" class="btn btn--block" aria-expanded="false"><span>Сохранить</span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    {% for i in ['Счет', 'Накладная', 'Акт'] %}
+                                        <li class="dropdown-menu__item">
+                                            <a href="#" class="dropdown-menu__link">{{ i }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-8 col-12">
+                            <a href="#" class="btn btn--block">{{ mixins.icon('bank') }}<span>сохранить и отправить в банк</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

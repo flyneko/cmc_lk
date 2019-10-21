@@ -1,0 +1,76 @@
+.header
+  background: $style-color
+  color: #fff
+  font-family: 'ProximaNova'
+  font-size: 16px
+  position: sticky
+  left: 0
+  width: 100%
+  top: 0
+  z-index: 89
+  &__inn
+    display: flex
+    height: #{$header-height}px
+  &__left
+    flex-shrink: 0
+    display: flex
+    align-items: center
+    justify-content: space-between
+    .hamburger
+      transform: rotate(0)
+    +rmin($md)
+      &.is-nav-collapsed
+        .hamburger
+          transform: rotate(90deg)
+    +r($md)
+      &.is-nav-clicked .hamburger
+        transform: rotate(90deg)
+  &__logo
+    max-width: 144px
+    flex-grow: 1
+    margin-left: 5px
+  &__right
+    display: flex
+    justify-content: space-between
+    flex-grow: 1
+    > *
+      margin-right: 15px
+      &:last-child
+        margin-right: 0
+    +r($lg)
+      justify-content: flex-end
+  &__pay
+    flex-shrink: 0
+    width: 190px
+    display: flex
+    align-items: center
+  &__balance
+    display: flex
+    align-items: center
+    color: #fff
+    .icon
+      margin-right: 10px
+      font-size: 27px
+      fill: $style-color2
+  &__menu
+    display: flex
+    &-item
+      //padding: 0 15px
+    &-link
+      position: relative
+      line-height: 0
+      display: flex
+      align-items: center
+      padding: 0 15px
+      height: 100%
+      &:hover
+        background: lighten($style-color, 3)
+        .hover
+          opacity: 1
+      .hover
+        transition: all ease .25s
+        opacity: 0
+        +vcenter
+      .icon
+        font-size: 24px
+        fill: #fff

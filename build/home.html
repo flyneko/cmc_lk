@@ -1,0 +1,2397 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Главная</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors.min.css?1569975057">
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css?1569975057">
+    <script type="text/javascript" src="assets/js/modernizr.js?1569975057"></script>
+    <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="modal p-b-0" id="widgets">
+      <h2 class="h2 modal__title">Отображаемые виджеты</h2>
+      <div>
+        <div class="modal-switcher">
+          <span>Деньги</span>
+          <label class="switcher">
+            <input type="checkbox">
+            <div class="switcher__i"></div>
+          </label>
+        </div>
+        <div class="modal-switcher">
+          <span>Документы на продажу</span>
+          <label class="switcher">
+            <input type="checkbox">
+            <div class="switcher__i"></div>
+          </label>
+        </div>
+        <div class="modal-switcher">
+          <span>Электронная отчетность </span>
+          <label class="switcher">
+            <input type="checkbox">
+            <div class="switcher__i"></div>
+          </label>
+        </div>
+        <div class="modal-switcher">
+          <span>Документы на покупку </span>
+          <label class="switcher">
+            <input type="checkbox">
+            <div class="switcher__i"></div>
+          </label>
+        </div>
+        <div class="modal-switcher">
+          <span>Контрагенты</span>
+          <label class="switcher">
+            <input type="checkbox">
+            <div class="switcher__i"></div>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="l-body">
+      <header class="header">
+        <div class="l-wrapper">
+          <div class="header__inn">
+            <div class="header__left nav-sidebar">
+              <a class="js-nav-trigger" href="#">
+                    <div class="hamburger"></div>
+                </a>
+              <a href="." class="header__logo">
+                    <img src="./assets/img/logo.svg">
+                </a>
+            </div>
+            <div class="header__right">
+              <div class="header__pay d-none d-lg-flex">
+                <a href="#" class="btn btn--block btn--round btn--blue btn--md">
+                        <span>оплата сервиса</span>
+                    </a>
+              </div>
+              <a href="#" class="header__balance d-none d-md-flex">
+
+    <svg  class="icon icon-wallet"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-wallet"></use></svg>
+
+                    <span>Основной счет: 900,50 <i class="tenge"></i></span>
+                </a>
+              <ul class="header__menu d-none d-sm-flex">
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">
+
+    <svg  class="icon icon-flag"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-flag"></use></svg>
+
+                                <span class="hover">
+    <svg  class="icon icon-flag-fill"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-flag-fill"></use></svg>
+</span>
+                            </a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">
+
+    <svg  class="icon icon-chat"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-chat"></use></svg>
+
+                                <span class="hover">
+    <svg  class="icon icon-chat-fill"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-chat-fill"></use></svg>
+</span>
+                            </a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">
+
+    <svg  class="icon icon-bell"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-bell"></use></svg>
+
+                                <span class="hover">
+    <svg  class="icon icon-bell-fill"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-bell-fill"></use></svg>
+</span>
+                            </a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">
+
+    <svg  class="icon icon-coge"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-coge"></use></svg>
+
+                                <span class="hover">
+    <svg  class="icon icon-coge-fill"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-coge-fill"></use></svg>
+</span>
+                            </a>
+                </li>
+              </ul>
+              <div class="header__auth">
+                <div class="auth-menu js-dropdown">
+                  <div data-dropdown="trigger" class="auth-menu__user">
+                    <div class="auth-menu__user-pic">
+                      <svg class="icon icon-user-circle">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-user-circle"></use>
+                      </svg>
+                    </div>
+                    <div class="auth-menu__user-info d-none d-xxs-block">
+                      <div class="auth-menu__user-name"> ИП Сивасов И.А.</div>
+                    </div>
+                  </div>
+                  <div data-dropdown="drop" class="auth-menu__drop">
+                    <div class="auth-menu__info">
+                      <div class="auth-menu__user">
+                        <div class="auth-menu__user-pic">
+                          <svg class="icon icon-user-circle">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-user-circle"></use>
+                          </svg>
+                        </div>
+                        <div class="auth-menu__user-info">
+                          <div class="auth-menu__user-name">maxlapteff@gmail.com</div>
+                          <span class="auth-menu__access">Полный доступ</span>
+                        </div>
+                      </div>
+                      <div class="auth-menu__tariff">
+                        <svg class="icon icon-flag-circle">
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-flag-circle"></use>
+                        </svg> ИП, КХ и ТОО по упрощенному режиму без сотрудников <span class="auth-menu__access">действует до 14.09.2019</span>
+                      </div>
+                    </div>
+                    <ul class="auth-menu__nav">
+                      <li class="auth-menu__nav-item ">
+                        <a href="#" class="auth-menu__nav-link">
+
+    <svg  class="icon icon-build"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-build"></use></svg>
+
+                                            Управление организацией
+                                        </a>
+                      </li>
+                      <li class="auth-menu__nav-item ">
+                        <a href="#" class="auth-menu__nav-link">
+
+    <svg  class="icon icon-doc-edit"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-doc-edit"></use></svg>
+
+                                            Реквизиты и настройки
+                                        </a>
+                      </li>
+                      <li class="auth-menu__nav-item ">
+                        <a href="#" class="auth-menu__nav-link">
+
+    <svg  class="icon icon-docs-copy"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-docs-copy"></use></svg>
+
+                                            Мои документы
+                                        </a>
+                      </li>
+                      <li class="auth-menu__nav-item ">
+                        <a href="#" class="auth-menu__nav-link">
+
+    <svg  class="icon icon-sticker"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-sticker"></use></svg>
+
+                                            Визитка
+                                        </a>
+                      </li>
+                      <li class="auth-menu__nav-item m-t-30">
+                        <a href="#" class="auth-menu__nav-link">
+
+    <svg  class="icon icon-exit"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-exit"></use></svg>
+
+                                            Выйти из сервиса
+                                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="l-wrapper">
+        <div class="l-main">
+          <aside class="l-main__aside nav-sidebar">
+            <div class="sticky">
+              <div class="aside">
+                <ul class="aside__menu">
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-home"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-home"></use></svg>
+</span>
+                    <span>Главная</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-rouble"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-rouble"></use></svg>
+</span>
+                    <span>Деньги</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <ul class="aside__menu-sub">
+                      <li class="aside__menu-item">
+                        <a href="#" class="aside__menu-link">Акты</a>
+                      </li>
+                      <li class="aside__menu-item">
+                        <a href="#" class="aside__menu-link">Договора</a>
+                      </li>
+                      <li class="aside__menu-item">
+                        <a href="#" class="aside__menu-link">Поставки</a>
+                      </li>
+                      <li class="aside__menu-item">
+                        <a href="#" class="aside__menu-link">Учеты</a>
+                      </li>
+                    </ul>
+                    <a data-target-closest=".aside__menu-item" href="#" class="aside__menu-link  js-toggle">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-docs"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-docs"></use></svg>
+</span>
+                    <span>Документы</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-money"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-money"></use></svg>
+</span>
+                    <span>Зарплата</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-box"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-box"></use></svg>
+</span>
+                    <span>Товары</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-contract"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-contract"></use></svg>
+</span>
+                    <span>Договоры</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-user"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-user"></use></svg>
+</span>
+                    <span>Контрагенты</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-blank"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-blank"></use></svg>
+</span>
+                    <span>Бланки</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-report"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-report"></use></svg>
+</span>
+                    <span>Отчеты</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-stats"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-stats"></use></svg>
+</span>
+                    <span>Вебинары</span>
+                </a>
+                  </li>
+                </ul>
+                <ul class="aside__footer">
+                  <li class="aside__footer-item">
+                    <a href="#" class="aside__footer-link">Инструкции по сервису</a>
+                  </li>
+                  <li class="aside__footer-item">
+                    <a href="#" class="aside__footer-link">Помощь</a>
+                  </li>
+                  <li class="aside__footer-item">
+                    <a href="#" class="aside__footer-link">Еще</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </aside>
+          <main class="l-main__main">
+            <div class="row">
+              <div class="col-12">
+                <div class="widget">
+                  <div class="widget__head">
+                    <h3 class="h3">Деньги</h3>
+                    <ul class="actions">
+                      <li class="actions__item"><a title="скрыть" href="#" class="actions__link">
+    <svg  class="icon icon-minus-circle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-minus-circle"></use></svg>
+</a></li>
+                      <li class="actions__item"><a title="скрыть" href="#" class="actions__link js-widget-close">
+    <svg  class="icon icon-close-circle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-close-circle"></use></svg>
+</a></li>
+                    </ul>
+                  </div>
+                  <div class="row row-lg">
+                    <div class="col-md-6 col-12">
+                      <div class="widget__filters">
+                        <div>Все деньги в сервисе</div>
+                        <div>4 июля 2019</div>
+                        <b class="text-dark">900,50 <i class="tenge"></i></b>
+                      </div>
+                      <div class="row-border">
+                        <div class="table js-scroll">
+                          <table style="min-width: 350px;">
+                            <tbody>
+                              <tr>
+                                <td>Основной тенге в РК</td>
+                                <td>
+                                  <img style="max-width: 75px;" src="./assets/img/payment-types/hb.png">
+                                </td>
+                                <td class="text-right">600,00 <i class="tenge"></i></td>
+                              </tr>
+                              <tr>
+                                <td colspan="2">Касса</td>
+                                <td class="text-right">600,00 <i class="tenge"></i></td>
+                              </tr>
+                              <tr>
+                                <td colspan="2">Картой VISA</td>
+                                <td class="text-right">600,00 <i class="tenge"></i></td>
+                              </tr>
+                              <tr>
+                                <td colspan="2">Банковская карта</td>
+                                <td class="text-right">600,00 <i class="tenge"></i></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="row row-sm align-items-center">
+                          <div class="col-auto d-xxs-none">
+                            <div class="btn-group">
+                              <a href="#" class="btn" aria-expanded="false"><span>Добавить</span></a>
+                              <ul class="dropdown-menu" role="menu">
+                                <li class="dropdown-menu__item">
+                                  <a href="#" class="dropdown-menu__link">Поступление</a>
+                                </li>
+                                <li class="dropdown-menu__item">
+                                  <a href="#" class="dropdown-menu__link">Списание</a>
+                                </li>
+                                <li class="dropdown-menu__item">
+                                  <a href="#" class="dropdown-menu__link">Обновить из банка</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="col-auto d-none d-xxs-block">
+                            <svg class="icon icon-plus">
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-plus"></use>
+                            </svg>
+                          </div>
+                          <div class="col-auto d-none d-xxs-block">
+                            <a href="#" class="btn"><span>Поступление</span></a>
+                          </div>
+                          <div class="col-auto d-none d-xxs-block">
+                            <a href="#" class="btn"><span>Списание</span></a>
+                          </div>
+                          <div class="col-auto d-none d-xxs-block">
+                            <a href="#" class="btn"><span>Обновить из банка</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row justify-content-between">
+                        <div class="col-auto">Расчет УСН</div>
+                        <div class="col-auto">4 июля 2019</div>
+                        <div class="col-auto">
+                          <b class="link text-dark text-medium">
+                            <svg class="icon icon-check-circle">
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check-circle"></use>
+                            </svg>
+                            <span>15 000 <i class="tenge"></i></span> </b>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                      <div class="widget__filters">
+                        <div>Основной рубли в РФ</div>
+                        <div><img style="max-width: 75px;" src="./assets/img/payment-types/hb.png"></div>
+                        <b class="text-dark">900,50 <i class="tenge"></i></b>
+                      </div>
+                      <div style="max-height: 205px;" class="table js-scroll">
+                        <table style="min-width: 350px;">
+                          <tbody>
+                            <tr>
+                              <td>13.06.19</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-success text-right">16 500, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td>04.06.19</td>
+                              <td>Гречка Петр Алексеевич</td>
+                              <td class="text-danger text-right">- 20 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td>13.06.19</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-success text-right">16 500, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td>04.06.19</td>
+                              <td>Гречка Петр Алексеевич</td>
+                              <td class="text-danger text-right">- 20 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td>13.06.19</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-success text-right">16 500, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td>04.06.19</td>
+                              <td>Гречка Петр Алексеевич</td>
+                              <td class="text-danger text-right">- 20 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td>13.06.19</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-success text-right">16 500, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td>04.06.19</td>
+                              <td>Гречка Петр Алексеевич</td>
+                              <td class="text-danger text-right">- 20 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td>13.06.19</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-success text-right">16 500, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td>04.06.19</td>
+                              <td>Гречка Петр Алексеевич</td>
+                              <td class="text-danger text-right">- 20 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td>13.06.19</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-success text-right">16 500, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td>04.06.19</td>
+                              <td>Гречка Петр Алексеевич</td>
+                              <td class="text-danger text-right">- 20 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td>13.06.19</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-success text-right">16 500, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td>04.06.19</td>
+                              <td>Гречка Петр Алексеевич</td>
+                              <td class="text-danger text-right">- 20 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td>13.06.19</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-success text-right">16 500, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td>04.06.19</td>
+                              <td>Гречка Петр Алексеевич</td>
+                              <td class="text-danger text-right">- 20 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td>13.06.19</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-success text-right">16 500, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td>04.06.19</td>
+                              <td>Гречка Петр Алексеевич</td>
+                              <td class="text-danger text-right">- 20 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td>13.06.19</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-success text-right">16 500, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td>04.06.19</td>
+                              <td>Гречка Петр Алексеевич</td>
+                              <td class="text-danger text-right">- 20 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="row justify-content-between">
+                        <div class="col-auto">Последняя выписка получена 28 июня</div>
+                        <div class="col-auto">
+                          <a href="#" class="text-blue">Импортировать</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-12">
+                <div class="widget">
+                  <div class="widget__head">
+                    <h3 class="h3">Налоговый календарь</h3>
+                  </div>
+                  <div class="widget__filters">
+                    <div>
+                      <select data-class="select2-inline" class="js-select">
+                        <option>2019</option>
+                        <option>2018</option>
+                        <option>2017</option>
+                      </select>
+                    </div>
+                    <div>
+                      <select data-class="select2-inline" class="js-select">
+                        <option>Актуальные</option>
+                        <option>Завершенные</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div data-scroll-nice style="max-height: 300px;" class="widget__inn js-scroll">
+                    <div class="tax-calendar table">
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td class="tax-calendar__period text-danger">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Отчет в ПФР: СЗВ-М за декабрь 2016 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Оплатить фиксированные взносы за II квартал 2017 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period text-danger">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Отчет в ПФР: СЗВ-М за декабрь 2016 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Оплатить фиксированные взносы за II квартал 2017 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period text-danger">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Отчет в ПФР: СЗВ-М за декабрь 2016 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Оплатить фиксированные взносы за II квартал 2017 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period text-danger">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Отчет в ПФР: СЗВ-М за декабрь 2016 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Оплатить фиксированные взносы за II квартал 2017 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period text-danger">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Отчет в ПФР: СЗВ-М за декабрь 2016 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Оплатить фиксированные взносы за II квартал 2017 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period text-danger">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Отчет в ПФР: СЗВ-М за декабрь 2016 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Оплатить фиксированные взносы за II квартал 2017 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period text-danger">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Отчет в ПФР: СЗВ-М за декабрь 2016 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Оплатить фиксированные взносы за II квартал 2017 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period text-danger">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Отчет в ПФР: СЗВ-М за декабрь 2016 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Оплатить фиксированные взносы за II квартал 2017 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period text-danger">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Отчет в ПФР: СЗВ-М за декабрь 2016 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Оплатить фиксированные взносы за II квартал 2017 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period text-danger">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Отчет в ПФР: СЗВ-М за декабрь 2016 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Оплатить фиксированные взносы за II квартал 2017 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period text-danger">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Отчет в ПФР: СЗВ-М за декабрь 2016 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Оплатить фиксированные взносы за II квартал 2017 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period text-danger">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Отчет в ПФР: СЗВ-М за декабрь 2016 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Оплатить фиксированные взносы за II квартал 2017 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period text-danger">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Отчет в ПФР: СЗВ-М за декабрь 2016 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Оплатить фиксированные взносы за II квартал 2017 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period text-danger">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Отчет в ПФР: СЗВ-М за декабрь 2016 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Оплатить фиксированные взносы за II квартал 2017 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period text-danger">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Отчет в ПФР: СЗВ-М за декабрь 2016 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Оплатить фиксированные взносы за II квартал 2017 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period text-danger">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Отчет в ПФР: СЗВ-М за декабрь 2016 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Оплатить фиксированные взносы за II квартал 2017 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period text-danger">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Отчет в ПФР: СЗВ-М за декабрь 2016 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Оплатить фиксированные взносы за II квартал 2017 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period text-danger">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Отчет в ПФР: СЗВ-М за декабрь 2016 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Оплатить фиксированные взносы за II квартал 2017 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period text-danger">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Отчет в ПФР: СЗВ-М за декабрь 2016 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Оплатить фиксированные взносы за II квартал 2017 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period text-danger">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Отчет в ПФР: СЗВ-М за декабрь 2016 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="tax-calendar__period">
+                              <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">01</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div> − <div class="tax-calendar__date">
+                                <span class="tax-calendar__date-day">15</span>
+                                <span class="tax-calendar__date-month">янв</span>
+                              </div>
+                            </td>
+                            <td>
+                              <a href="#">Оплатить фиксированные взносы за II квартал 2017 года</a>
+                            </td>
+                            <td class="tax-calendar__more">
+                              <a href="#">
+    <svg  class="icon icon-check"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-check"></use></svg>
+</a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-12">
+                <div class="widget">
+                  <div class="widget__head">
+                    <h3 class="h3">Документы на продажу</h3>
+                    <ul class="actions">
+                      <li class="actions__item"><a title="скрыть" href="#" class="actions__link js-widget-close">
+    <svg  class="icon icon-close-circle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-close-circle"></use></svg>
+</a></li>
+                    </ul>
+                  </div>
+                  <div class="widget__filters m-b-0">
+                    <div>Счета</div>
+                    <div>
+                      <select data-class="select2-inline" class="js-select">
+                        <option>2019</option>
+                        <option>2018</option>
+                        <option>2017</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row-border">
+                    <div class="row text-center">
+                      <div class="col-xxs-4">
+                        <span class="text-dark">Выставленные</span>
+                        <div>770 850,88 <i class="tenge"></i></div>
+                      </div>
+                      <div class="col-xxs-4">
+                        <span class="text-dark">Неоплаченные</span>
+                        <div class="text-danger">510 600,00 <i class="tenge"></i></div>
+                      </div>
+                      <div class="col-xxs-4">
+                        <span class="text-dark">Без закрывающих</span>
+                        <div class="text-danger">770 850,88 <i class="tenge"></i></div>
+                      </div>
+                    </div>
+                  </div>
+                  <h4 class="h4">Недавно выставленные</h4>
+                  <div class="js-tabs">
+                    <div class="tabs">
+                      <ul class="tabs__list">
+                        <li class="tabs__bar" data-tabs="bar"></li>
+                        <li class="tabs__item">
+                          <a data-tabs="link" class="tabs__link is-active" href="#Все"><span>Все</span></a>
+                        </li>
+                        <li class="tabs__item">
+                          <a data-tabs="link" class="tabs__link " href="#Счет"><span>Счет</span></a>
+                        </li>
+                        <li class="tabs__item">
+                          <a data-tabs="link" class="tabs__link " href="#Акты"><span>Акты</span></a>
+                        </li>
+                        <li class="tabs__item">
+                          <a data-tabs="link" class="tabs__link " href="#Накладные"><span>Накладные</span></a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div id="Все" data-tabs="pane" class="is-active">
+                      <div style="max-height: 100px;" class="table js-scroll">
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="row row-sm align-items-center">
+                        <div class="col-auto d-xxs-none">
+                          <div class="btn-group">
+                            <a href="#" class="btn" aria-expanded="false"><span>Добавить</span></a>
+                            <ul class="dropdown-menu" role="menu">
+                              <li class="dropdown-menu__item">
+                                <a href="#" class="dropdown-menu__link">Счет</a>
+                              </li>
+                              <li class="dropdown-menu__item">
+                                <a href="#" class="dropdown-menu__link">Накладная</a>
+                              </li>
+                              <li class="dropdown-menu__item">
+                                <a href="#" class="dropdown-menu__link">Акт</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-auto d-none d-xxs-block">
+                          <svg class="icon icon-plus">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-plus"></use>
+                          </svg>
+                        </div>
+                        <div class="col-auto d-none d-xxs-block">
+                          <a href="#" class="btn"><span>Счет</span></a>
+                        </div>
+                        <div class="col-auto d-none d-xxs-block">
+                          <a href="#" class="btn"><span>Накладная</span></a>
+                        </div>
+                        <div class="col-auto d-none d-xxs-block">
+                          <a href="#" class="btn"><span>Акт</span></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="Счет" data-tabs="pane">
+                      <div style="max-height: 100px;" class="table js-scroll">
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="row row-sm align-items-center">
+                        <div class="col-auto d-xxs-none">
+                          <div class="btn-group">
+                            <a href="#" class="btn" aria-expanded="false"><span>Добавить</span></a>
+                            <ul class="dropdown-menu" role="menu">
+                              <li class="dropdown-menu__item">
+                                <a href="#" class="dropdown-menu__link">Счет</a>
+                              </li>
+                              <li class="dropdown-menu__item">
+                                <a href="#" class="dropdown-menu__link">Накладная</a>
+                              </li>
+                              <li class="dropdown-menu__item">
+                                <a href="#" class="dropdown-menu__link">Акт</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-auto d-none d-xxs-block">
+                          <svg class="icon icon-plus">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-plus"></use>
+                          </svg>
+                        </div>
+                        <div class="col-auto d-none d-xxs-block">
+                          <a href="#" class="btn"><span>Счет</span></a>
+                        </div>
+                        <div class="col-auto d-none d-xxs-block">
+                          <a href="#" class="btn"><span>Накладная</span></a>
+                        </div>
+                        <div class="col-auto d-none d-xxs-block">
+                          <a href="#" class="btn"><span>Акт</span></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="Акты" data-tabs="pane">
+                      <div style="max-height: 100px;" class="table js-scroll">
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="row row-sm align-items-center">
+                        <div class="col-auto d-xxs-none">
+                          <div class="btn-group">
+                            <a href="#" class="btn" aria-expanded="false"><span>Добавить</span></a>
+                            <ul class="dropdown-menu" role="menu">
+                              <li class="dropdown-menu__item">
+                                <a href="#" class="dropdown-menu__link">Счет</a>
+                              </li>
+                              <li class="dropdown-menu__item">
+                                <a href="#" class="dropdown-menu__link">Накладная</a>
+                              </li>
+                              <li class="dropdown-menu__item">
+                                <a href="#" class="dropdown-menu__link">Акт</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-auto d-none d-xxs-block">
+                          <svg class="icon icon-plus">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-plus"></use>
+                          </svg>
+                        </div>
+                        <div class="col-auto d-none d-xxs-block">
+                          <a href="#" class="btn"><span>Счет</span></a>
+                        </div>
+                        <div class="col-auto d-none d-xxs-block">
+                          <a href="#" class="btn"><span>Накладная</span></a>
+                        </div>
+                        <div class="col-auto d-none d-xxs-block">
+                          <a href="#" class="btn"><span>Акт</span></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="Накладные" data-tabs="pane">
+                      <div style="max-height: 100px;" class="table js-scroll">
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                            <tr>
+                              <td class="text-dark">№15</td>
+                              <td>Сивасов Игорь Анатольевич</td>
+                              <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="row row-sm align-items-center">
+                        <div class="col-auto d-xxs-none">
+                          <div class="btn-group">
+                            <a href="#" class="btn" aria-expanded="false"><span>Добавить</span></a>
+                            <ul class="dropdown-menu" role="menu">
+                              <li class="dropdown-menu__item">
+                                <a href="#" class="dropdown-menu__link">Счет</a>
+                              </li>
+                              <li class="dropdown-menu__item">
+                                <a href="#" class="dropdown-menu__link">Накладная</a>
+                              </li>
+                              <li class="dropdown-menu__item">
+                                <a href="#" class="dropdown-menu__link">Акт</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-auto d-none d-xxs-block">
+                          <svg class="icon icon-plus">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-plus"></use>
+                          </svg>
+                        </div>
+                        <div class="col-auto d-none d-xxs-block">
+                          <a href="#" class="btn"><span>Счет</span></a>
+                        </div>
+                        <div class="col-auto d-none d-xxs-block">
+                          <a href="#" class="btn"><span>Накладная</span></a>
+                        </div>
+                        <div class="col-auto d-none d-xxs-block">
+                          <a href="#" class="btn"><span>Акт</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-12">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="widget">
+                      <div class="widget__head">
+                        <h3 class="h3">Электронная отчетность</h3>
+                        <ul class="actions">
+                          <li class="actions__item"><a title="скрыть" href="#" class="actions__link js-widget-close">
+    <svg  class="icon icon-close-circle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-close-circle"></use></svg>
+</a></li>
+                        </ul>
+                      </div>
+                      <div class="widget__inn">
+                        <a href="#" class="link">
+    <svg  class="icon icon-lightning"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-lightning"></use></svg>
+ Подключите электронную отчетность</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="widget">
+                      <div class="widget__head">
+                        <h3 class="h3">Контрагенты</h3>
+                        <ul class="actions">
+                          <li class="actions__item"><a title="скрыть" href="#" class="actions__link js-widget-close">
+    <svg  class="icon icon-close-circle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-close-circle"></use></svg>
+</a></li>
+                        </ul>
+                      </div>
+                      <form autocomplete="off" class="m-b-20 complex-input">
+                        <input class="input" placeholder="Найти контрагента....">
+                        <button class="complex-input__icon" type="submit">
+                          <svg class="icon icon-loupe">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-loupe"></use>
+                          </svg>
+                        </button>
+                      </form>
+                      <div class="table">
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <div class="text-medium text-dark">Кургинян Иван Алексеевич</div> ИНН: 3542177166377
+                              </td>
+                              <td class="text-right">
+                                <ul class="contacts-buttons">
+                                  <li class="contacts-buttons__item">
+                                    <a data-interactive="true" data-tippy content="Телефон: <br> <a href='#'>+7 8123 123 123</a>" href="#" class="contacts-buttons__link">
+    <svg  class="icon icon-phone"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-phone"></use></svg>
+</a>
+                                  </li>
+                                  <li class="contacts-buttons__item">
+                                    <a data-interactive="true" data-tippy content="Электронная почта: <br> <a href='#'>+7 8123 123 123</a>" href="#" class="contacts-buttons__link">
+    <svg  class="icon icon-envelope"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-envelope"></use></svg>
+</a>
+                                  </li>
+                                  <li class="contacts-buttons__item">
+                                    <a data-interactive="true" data-tippy content="Skype: <br> <a href='#'>+7 8123 123 123</a>" href="#" class="contacts-buttons__link">
+    <svg  class="icon icon-skype"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-skype"></use></svg>
+</a>
+                                  </li>
+                                  <li class="contacts-buttons__item">
+                                    <a data-interactive="true" data-tippy content="Карточка: <br> <a href='#'>+7 8123 123 123</a>" href="#" class="contacts-buttons__link">
+    <svg  class="icon icon-docs-copy"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-docs-copy"></use></svg>
+</a>
+                                  </li>
+                                </ul>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="text-medium text-dark">Кургинян Иван Алексеевич</div> ИНН: 3542177166377
+                              </td>
+                              <td class="text-right">
+                                <ul class="contacts-buttons">
+                                  <li class="contacts-buttons__item">
+                                    <a data-interactive="true" data-tippy content="Телефон: <br> <a href='#'>+7 8123 123 123</a>" href="#" class="contacts-buttons__link">
+    <svg  class="icon icon-phone"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-phone"></use></svg>
+</a>
+                                  </li>
+                                  <li class="contacts-buttons__item">
+                                    <a data-interactive="true" data-tippy content="Электронная почта: <br> <a href='#'>+7 8123 123 123</a>" href="#" class="contacts-buttons__link">
+    <svg  class="icon icon-envelope"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-envelope"></use></svg>
+</a>
+                                  </li>
+                                  <li class="contacts-buttons__item">
+                                    <a data-interactive="true" data-tippy content="Skype: <br> <a href='#'>+7 8123 123 123</a>" href="#" class="contacts-buttons__link">
+    <svg  class="icon icon-skype"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-skype"></use></svg>
+</a>
+                                  </li>
+                                  <li class="contacts-buttons__item">
+                                    <a data-interactive="true" data-tippy content="Карточка: <br> <a href='#'>+7 8123 123 123</a>" href="#" class="contacts-buttons__link">
+    <svg  class="icon icon-docs-copy"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-docs-copy"></use></svg>
+</a>
+                                  </li>
+                                </ul>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="text-medium text-dark">Кургинян Иван Алексеевич</div> ИНН: 3542177166377
+                              </td>
+                              <td class="text-right">
+                                <ul class="contacts-buttons">
+                                  <li class="contacts-buttons__item">
+                                    <a data-interactive="true" data-tippy content="Телефон: <br> <a href='#'>+7 8123 123 123</a>" href="#" class="contacts-buttons__link">
+    <svg  class="icon icon-phone"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-phone"></use></svg>
+</a>
+                                  </li>
+                                  <li class="contacts-buttons__item">
+                                    <a data-interactive="true" data-tippy content="Электронная почта: <br> <a href='#'>+7 8123 123 123</a>" href="#" class="contacts-buttons__link">
+    <svg  class="icon icon-envelope"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-envelope"></use></svg>
+</a>
+                                  </li>
+                                  <li class="contacts-buttons__item">
+                                    <a data-interactive="true" data-tippy content="Skype: <br> <a href='#'>+7 8123 123 123</a>" href="#" class="contacts-buttons__link">
+    <svg  class="icon icon-skype"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-skype"></use></svg>
+</a>
+                                  </li>
+                                  <li class="contacts-buttons__item">
+                                    <a data-interactive="true" data-tippy content="Карточка: <br> <a href='#'>+7 8123 123 123</a>" href="#" class="contacts-buttons__link">
+    <svg  class="icon icon-docs-copy"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-docs-copy"></use></svg>
+</a>
+                                  </li>
+                                </ul>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="row row-sm">
+                        <div class="col-auto">
+                          <div class="btn-group">
+                            <a href="#" class="btn" aria-expanded="false"><span>Добавить</span></a>
+                            <ul class="dropdown-menu" role="menu">
+                              <li class="dropdown-menu__item">
+                                <a href="#" class="dropdown-menu__link">Контрагента</a>
+                              </li>
+                              <li class="dropdown-menu__item">
+                                <a href="#" class="dropdown-menu__link">Работника</a>
+                              </li>
+                              <li class="dropdown-menu__item">
+                                <a href="#" class="dropdown-menu__link">Директора</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-auto">
+                          <a href="#" class="btn"><span>проверка контрагентов</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-12">
+                <div class="widget widget--auto">
+                  <div class="widget__head m-b-20">
+                    <h3 class="h3">Документы на покупку</h3>
+                    <ul class="actions">
+                      <li class="actions__item"><a title="скрыть" href="#" class="actions__link js-widget-close">
+    <svg  class="icon icon-close-circle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-close-circle"></use></svg>
+</a></li>
+                    </ul>
+                  </div>
+                  <h4 class="h4">Недавно выставленные</h4>
+                  <div class="js-tabs">
+                    <div class="tabs">
+                      <ul class="tabs__list">
+                        <li class="tabs__bar" data-tabs="bar"></li>
+                        <li class="tabs__item">
+                          <a data-tabs="link" class="tabs__link is-active" href="#Все"><span>Все</span></a>
+                        </li>
+                        <li class="tabs__item">
+                          <a data-tabs="link" class="tabs__link " href="#Счет"><span>Счет</span></a>
+                        </li>
+                        <li class="tabs__item">
+                          <a data-tabs="link" class="tabs__link " href="#Акты"><span>Акты</span></a>
+                        </li>
+                        <li class="tabs__item">
+                          <a data-tabs="link" class="tabs__link " href="#Накладные"><span>Накладные</span></a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div id="Все" data-tabs="pane" class="is-active">
+                      <div class="empty-block"> Не было создано ни одного документа </div>
+                      <div class="row row-sm align-items-center">
+                        <div class="col-auto">
+                          <svg class="icon icon-plus">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-plus"></use>
+                          </svg>
+                        </div>
+                        <div class="col-auto">
+                          <a href="#" class="btn"><span>Накладная</span></a>
+                        </div>
+                        <div class="col-auto">
+                          <a href="#" class="btn"><span>Акт</span></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="Счет" data-tabs="pane">
+                      <div class="empty-block"> Не было создано ни одного документа </div>
+                      <div class="row row-sm align-items-center">
+                        <div class="col-auto">
+                          <svg class="icon icon-plus">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-plus"></use>
+                          </svg>
+                        </div>
+                        <div class="col-auto">
+                          <a href="#" class="btn"><span>Накладная</span></a>
+                        </div>
+                        <div class="col-auto">
+                          <a href="#" class="btn"><span>Акт</span></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="Акты" data-tabs="pane">
+                      <div class="empty-block"> Не было создано ни одного документа </div>
+                      <div class="row row-sm align-items-center">
+                        <div class="col-auto">
+                          <svg class="icon icon-plus">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-plus"></use>
+                          </svg>
+                        </div>
+                        <div class="col-auto">
+                          <a href="#" class="btn"><span>Накладная</span></a>
+                        </div>
+                        <div class="col-auto">
+                          <a href="#" class="btn"><span>Акт</span></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="Накладные" data-tabs="pane">
+                      <div class="empty-block"> Не было создано ни одного документа </div>
+                      <div class="row row-sm align-items-center">
+                        <div class="col-auto">
+                          <svg class="icon icon-plus">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-plus"></use>
+                          </svg>
+                        </div>
+                        <div class="col-auto">
+                          <a href="#" class="btn"><span>Накладная</span></a>
+                        </div>
+                        <div class="col-auto">
+                          <a href="#" class="btn"><span>Акт</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="m-t-30 text-center">
+              <a data-fancybox href="#widgets" class="btn btn--light btn--lg btn--border btn--round btn--transparent">
+
+    <svg  class="icon icon-widgets"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-widgets"></use></svg>
+
+            <span>настройка виджетов</span>
+        </a>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="assets/js/vendors.min.js?1569975057"></script>
+    <script type="text/javascript" src="assets/js/dropdown.js?1569975057"></script>
+    <script type="text/javascript" src="assets/js/tabs.js?1569975057"></script>
+    <script type="text/javascript" src="assets/js/map.js?1569975057"></script>
+    <script type="text/javascript" src="assets/js/helpers.js?1569975057"></script>
+    <script type="text/javascript" src="assets/js/swipeMenu.js?1569975057"></script>
+    <script type="text/javascript" src="assets/js/app.js?1569975057"></script>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+.select2-container
+  box-sizing: border-box
+  display: inline-block
+  margin: 0
+  position: relative
+  vertical-align: middle
+  .select2-selection--single
+    box-sizing: border-box
+    cursor: pointer
+    display: block
+    user-select: none
+  .select2-selection__rendered
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+  .select2-selection__clear
+    position: relative
+
+
+@import "../../../node_modules/select2/src/scss/dropdown"
+
+.select2-dropdown
+  border-bottom: 0
+  z-index: 1001
+
+.select2-close-mask
+  border: 0
+  margin: 0
+  padding: 0
+  display: block
+  position: fixed
+  left: 0
+  top: 0
+  min-height: 100%
+  min-width: 100%
+  height: auto
+  width: auto
+  opacity: 0
+  z-index: 99
+  background-color: #fff
+  filter: alpha(opacity=0)
+
+.select2-hidden-accessible
+  border: 0 !important
+  clip: rect(0 0 0 0) !important
+  clip-path: inset(50%) !important
+  height: 1px !important
+  overflow: hidden !important
+  padding: 0 !important
+  position: absolute !important
+  width: 1px !important
+  white-space: nowrap !important
+
+
+.select2-selection
+  &:not(.select2-inline) &__rendered
+    @extend .input
+    line-height: 37px
+    .select2-container--open &
+      border-color: #b8c0c8
+
+.select2-selection__rendered
+  text-overflow: ellipsis
+  white-space: nowrap
+  overflow: hidden
+  padding-right: 40px !important
+  display: flex
+  align-items: center
+  color: $font-color
+  .select2-container--below.select2-container--open &
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
+  .select2-container--above.select2-container--open &
+    border-top-left-radius: 0
+    border-top-right-radius: 0
+  .select2-container--disabled &
+
+  .icon
+    left: 0
+    transform: none
+    top: 9px
+
+.select2-selection__placeholder
+  color: #666565
+
+.select2-selection__arrow
+  &:before
+    content: ''
+    +arr(7, 4, $style-color2, b)
+    position: absolute
+    top: 50%
+    line-height: 1
+    margin: 1px 0 0
+    right: 20px
+    transform: translateY(-50%)
+    transition: all ease .2s
+
+
+
+.select2-dropdown
+  background: transparent
+  border: 0
+  border-radius: 0
+
+.select2-results
+  &__options
+    @extend .dropdown-menu
+    position: relative !important
+    max-height: 225px
+    overflow: auto
+    display: block !important
+  &__option
+    @extend .dropdown-menu__link
+    &[aria-selected="true"]
+      @extend .dropdown-menu__link:hover
+    &--highlighted
+      background: #e2e9ef
+
+.select2-white
+  .select2-selection__rendered
+    background: #fff !important
+
+.select2-inline
+  font-size: 16px
+  &:hover
+    .select2-selection__arrow
+      &:before
+        margin-top: 5px
+      &:after
+        height: 6px
+  .select2-selection__rendered
+    padding-right: 16px !important
+    color: #676a6c
+  .select2-selection__arrow
+    &:before
+      right: 0
+    &:after
+      width: 1px
+      background: $style-color2
+      position: absolute
+      transition: all ease .2s
+      height: 0
+      right: 3px
+      content: ''
+      top: 8px
+  .select2-results__options
+    border-radius: 5px
+    margin-top: 10px
+  &.select2-dropdown
+    position: relative
+    width: auto !important
+    @extend .dropdown-menu--arrow

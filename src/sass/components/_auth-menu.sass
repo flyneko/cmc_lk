@@ -1,0 +1,95 @@
+.auth-menu
+  color: #fff
+  height: 100%
+  position: relative
+  &__user
+    display: flex
+    align-items: center
+    height: 100%
+    cursor: pointer
+    &-info
+      padding-left: 10px
+    &-pic
+      background: $style-color2
+      display: flex
+      width: 42px
+      height: 42px
+      align-items: center
+      justify-content: center
+      border-radius: 50%
+      .icon
+        fill: #fff
+        font-size: 26px
+      img
+        object-fit: cover
+        height: 100%
+        width: 100%
+    &-name
+      text-overflow: ellipsis
+      overflow: hidden
+      white-space: nowrap
+      max-width: 200px
+  &__drop
+    position: absolute
+    top: 100%
+    right: 0
+    border-radius: 0 0 5px 5px
+    background: #598dd7
+    pointer-events: none
+    opacity: 0
+    transform: translateY(-10px)
+    transition: all ease .25s
+    width: 300px
+    display: block !important
+    .dropdown-open &
+      transform: translateY(0)
+      opacity: 1
+      pointer-events: auto
+    .auth-menu__user
+      margin-left: -10px
+      cursor: default
+  &__info, &__nav
+    padding: 0 30px
+  &__access
+    font-size: 14px
+    color: #b9d6fe
+    display: block
+  &__tariff
+    position: relative
+    padding-left: 30px
+    margin-top: 15px
+    font-size: 14px
+    padding-top: 2px
+    .icon
+      font-size: 22px
+      fill: #fff
+      position: absolute
+      left: 0
+      top: 0
+  &__info
+    background: #70a0e3
+    padding-top: 25px
+    padding-bottom: 25px
+  &__nav
+    padding-top: 30px
+    padding-bottom: 30px
+    &-item
+      margin-bottom: 20px
+      &:last-child
+        margin-bottom: 0
+    &-link
+      display: flex
+      align-items: center
+      color: #ffffff
+      .icon
+        font-size: 20px
+        fill: $style-color2
+        margin-right: 12px
+  &.dropdown-open > &__user &__user-pic
+    &:before
+      content: ''
+      position: absolute
+      +arr(10, 4, #70a0e3, t)
+      bottom: 0
+      left: 21px
+      transform: translateX(-50%)

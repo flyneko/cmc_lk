@@ -1,0 +1,118 @@
+=img-cover
+  html:not(.object-fit) &
+    position: absolute
+    min-width: 100%
+    min-height: 100%
+    width: auto
+    height: auto
+    transform: translate(-50%, -50%)
+    top: 50%
+    left: 50%
+  .object-fit &
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+=smooth-scroll
+  -webkit-overflow-scrolling: touch
+
+=smooth-font
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+=gpu
+  transform: translate3d(0,0,0)
+
+
+.svg-sprite
+  border: 0
+  clip: rect(0 0 0 0)
+  height: 1px
+  margin: -1px
+  overflow: hidden
+  padding: 0
+  position: absolute
+  width: 1px
+  white-space: nowrap
+
+.ws-nowrap
+  white-space: nowrap
+.relative
+  position: relative
+
+
+.text-right
+  text-align: right !important
+.text-center
+  text-align: center !important
+.text-left
+  text-align: left !important
+
+@for $i from 0 through 8
+  $step: $i * 5
+  .m-#{$step}
+    margin: #{$step}px !important
+  .m-l-#{$step}
+    margin-left: #{$step}px !important
+  .m-r-#{$step}
+    margin-right: #{$step}px !important
+  .m-b-#{$step}
+    margin-bottom: #{$step}px !important
+  .m-t-#{$step}
+    margin-top: #{$step}px !important
+  .m-l-r-#{$step}
+    margin-left: #{$step}px !important
+    margin-right: #{$step}px !important
+  .m-b-t-#{$step}
+    margin-top: #{$step}px !important
+    margin-bottom: #{$step}px !important
+  .p-#{$step}
+    padding: #{$step}px !important
+  .p-l-#{$step}
+    padding-left: #{$step}px !important
+  .p-r-#{$step}
+    padding-right: #{$step}px !important
+  .p-b-#{$step}
+    padding-bottom: #{$step}px !important
+  .p-t-#{$step}
+    padding-top: #{$step}px !important
+  .p-l-r-#{$step}
+    padding-left: #{$step}px !important
+    padding-right: #{$step}px !important
+  .p-b-t-#{$step}
+    padding-top: #{$step}px !important
+    padding-bottom: #{$step}px !important
+
+.inline-block
+  display: inline-block
+
+.vertical-top
+  vertical-align: top !important
+
+.vertical-bottom
+  vertical-align: bottom !important
+
+.vertical-middle
+  vertical-align: middle !important
+
+.align-items-center
+  align-items: center
+
+.justify-content-between
+  justify-content: space-between
+
+.justify-content-start
+  justify-content: flex-start !important
+
+.justify-content-end
+  justify-content: flex-end
+
+.flex-grow
+  flex-grow: 1
+
+%table
+  display: table
+  width: 100%
+  > *
+    display: table-cell
+    vertical-align: middle

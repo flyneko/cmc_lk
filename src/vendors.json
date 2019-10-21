@@ -1,0 +1,48 @@
+{
+  "jquery": [
+    "dist/jquery.min.js"
+  ],
+  "@fancyapps/fancybox": [
+    "dist/jquery.fancybox.min.js",
+    "dist/jquery.fancybox.min.css"
+  ],
+  "swiper": [
+    "dist/js/swiper.min.js",
+    "dist/css/swiper.min.css"
+  ],
+  "jquery-mask-plugin": [
+    "dist/jquery.mask.min.js"
+  ],
+  "smooth-scrollbar": [
+    "dist/smooth-scrollbar.js"
+  ],
+  "select2": [
+    "dist/js/select2.full.js",
+    "dist/js/i18n/ru.js"
+  ],
+  "popper.js": [
+    "dist/umd/popper.min.js"
+  ],
+  "tippy.js": [
+    "umd/index.all.min.js",
+    "index.css"
+  ],
+  "iscroll": [
+    "build/iscroll.js"
+  ],
+  "air-datepicker": [
+    "dist/js/datepicker.min.js",
+    "dist/css/datepicker.min.css"
+  ],
+  "tabulator-tables": [
+    "dist/js/tabulator_core.min.js",
+    "dist/js/modules/html_table_import.min.js",
+    "dist/js/modules/select_row.min.js",
+    "dist/js/modules/responsive_layout.min.js",
+    "dist/js/modules/page.min.js",
+    "dist/js/modules/format.min.js",
+    "dist/js/modules/accessor.min.js",
+    "dist/js/modules/sort.min.js",
+    "dist/js/modules/filter.min.js"
+  ]
+}

@@ -1,0 +1,12 @@
+{% macro icon(i, style) %}
+    <svg {% if style %}style="{{ style }}"{% endif %} class="icon icon-{{i}}"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-{{i}}"></use></svg>
+{% endmacro %}
+
+{% macro ticon(i, opt) %}
+    <i {% if opt['size'] or opt['color'] %}style="{% if opt['size'] %}font-size: {{ opt['size'] }}px;{% endif %}{% if opt['color'] %}color: {{ opt['color'] }};{% endif %}"{% endif %} class="ticon ticon-{{ i }} {% if opt['class'] %}{{ opt['class'] }}{% endif %}"></i>
+{% endmacro %}
+
+{% macro picon(i) %}
+    <i class="picon picon-{{ i }}"></i>
+{% endmacro %}
+

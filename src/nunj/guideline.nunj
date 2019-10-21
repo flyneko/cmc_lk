@@ -1,0 +1,179 @@
+---
+title: Гайдлайн
+without_layout: true
+---
+{% extends "layouts/_layout.nunj" %}
+{% block content %}
+    <style>
+        body {
+            background: #ffffff;
+        }
+        .p-guideline {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 100px 0 50px;
+        }
+
+        .pagination {
+            text-align: left;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            $('#input-example').on('input',function () {
+                var $wrapper = $('.complex-input');
+                if (this.value != '')
+                    $wrapper.addClass('is-valid');
+                else
+                    $wrapper.removeClass('is-valid');
+            })
+        }
+    </script>
+
+    <div class="p-guideline">
+        <div class="m-b-30">
+            <div class="btn-group">
+                <a href="#" class="btn" aria-expanded="false"><span>Добавить</span></a>
+                <ul class="dropdown-menu" role="menu">
+                    {% for i in ['Счет', 'Накладная', 'Акт'] %}
+                        <li class="dropdown-menu__item">
+                            <a href="#" class="dropdown-menu__link">{{ i }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="m-b-30">
+            <a href="#" class="btn"><span>Добавить</span></a>
+        </div>
+
+        <div class="m-b-30">
+            {{ chunks.pagination() }}
+        </div>
+
+        <div class="m-b-30">
+            <div class="row">
+                <div class="col-auto">
+                    {{ chunks.radio({ text: 'Радиокнопка' }) }}
+                </div>
+                <div class="col-auto">
+                    {{ chunks.checkbox({ text: 'Чекбокс' }) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="m-b-30">
+            <div class="complex-input">
+                <input class="input" placeholder="Найти контрагента....">
+                <button class="complex-input__icon" type="submit">
+                    {{ mixins.icon('loupe') }}
+                </button>
+            </div>
+        </div>
+
+        <div class="m-b-30">
+            <input class="input" placeholder="Найти контрагента....">
+        </div>
+
+        <div class="m-b-30">
+            <a href="#" class="btn btn--round btn--lg btn--white btn--outline"><span>Показать еще</span></a>
+        </div>
+
+        <div class="m-b-30">
+            <a href="#" class="btn-close">{{ mixins.icon('close') }}</a>
+        </div>
+
+        <div class="m-b-30">
+            <div class="row">
+                <div class="col-12">
+                    <a href="#" class="btn btn--green"><span>Поступление &uarr;</span></a>
+                </div>
+                <div class="col-12">
+                    <a href="#" class="btn btn--red"><span>Списание &darr;</span></a>
+                </div>
+                <div class="col-12">
+                    <a href="#" class="btn btn--dark-blue"><span>Движение &larr; &rarr;</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-b-30">
+            <a href="#" class="btn btn--xs btn--black">{{ mixins.icon('docs-copy') }}<span>Копировать</span></a>
+        </div>
+
+        <div class="m-b-30">
+            <ul class="widget__actions">
+                <li class="widget__actions-item"><a title="скрыть" href="#" class="widget__actions-link">{{ mixins.icon('minus-circle') }}</a></li>
+                <li class="widget__actions-item"><a title="скрыть" href="#" class="widget__actions-link">{{ mixins.icon('close-circle') }}</a></li>
+            </ul>
+        </div>
+
+        <div class="m-b-30">
+            <a href="#" class="btn btn--light btn--transparent btn--lg btn--border btn--round">
+                {{ mixins.icon('widgets') }}
+                <span>настройка виджетов</span>
+            </a>
+        </div>
+
+        <div class="m-b-30">
+            <ul class="contacts-buttons">
+                {% for k, v in {
+                'Телефон': 'phone',
+                'Электронная почта': 'envelope',
+                'Skype': 'skype',
+                'Карточка': 'docs-copy'
+                } %}
+                    <li class="contacts-buttons__item">
+                        <a title="{{ k }}" href="#" class="contacts-buttons__link">{{ mixins.icon(v) }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="m-b-30">
+            <a href="#" class="btn btn--round btn--blue btn--md">
+                <span>оплата сервиса</span>
+            </a>
+        </div>
+
+        <div class="m-b-30">
+            <a href="#" class="btn btn--round btn--lg">
+                <span>Продолжить оплату</span>
+            </a>
+        </div>
+
+        <div class="m-b-30">
+            <label class="block-checkbox">
+                <input type="checkbox">
+                <span class="block-checkbox__i">
+                    ИП, КХ и ТОО до 5 сотрудников <br> (без НДС)
+                </span>
+            </label>
+        </div>
+
+        <div class="m-b-30">
+            <select class="js-select">
+                <option>1 год за 9 990 ₸</option>
+                <option>1 год за 9 990 ₸</option>
+                <option>1 год за 9 990 ₸</option>
+                <option>1 год за 9 990 ₸</option>
+            </select>
+        </div>
+
+        <div class="m-b-30">
+            <label class="form__label">СНИЛС: <span data-interactive="true" title="Здесь будут показаны Ваши операции после создания р/с. Для удобства работы при создании р/с подключите интеграцию с банком." class="tooltip">{{ mixins.icon('question-circle') }}</span></label>
+        </div>
+
+        <div class="m-b-30">
+            {{ chunks.switcher({ text: 'Слайдер' }) }}
+        </div>
+
+        <div class="m-b-30">
+            <div class="complex-input">
+                <input id="input-example" type="text" class="input">
+            </div>
+        </div>
+    </div>
+{% endblock %}

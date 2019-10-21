@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Оплата</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors.min.css?1569975057">
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css?1569975057">
+    <script type="text/javascript" src="assets/js/modernizr.js?1569975057"></script>
+    <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="l-body">
+      <header class="header">
+        <div class="l-wrapper">
+          <div class="header__inn">
+            <div class="header__left nav-sidebar">
+              <a class="js-nav-trigger" href="#">
+                    <div class="hamburger"></div>
+                </a>
+              <a href="." class="header__logo">
+                    <img src="./assets/img/logo.svg">
+                </a>
+            </div>
+            <div class="header__right">
+              <div class="header__pay d-none d-lg-flex">
+                <a href="#" class="btn btn--block btn--round btn--blue btn--md">
+                        <span>оплата сервиса</span>
+                    </a>
+              </div>
+              <a href="#" class="header__balance d-none d-md-flex">
+
+    <svg  class="icon icon-wallet"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-wallet"></use></svg>
+
+                    <span>Основной счет: 900,50 <i class="tenge"></i></span>
+                </a>
+              <ul class="header__menu d-none d-sm-flex">
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">
+
+    <svg  class="icon icon-flag"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-flag"></use></svg>
+
+                                <span class="hover">
+    <svg  class="icon icon-flag-fill"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-flag-fill"></use></svg>
+</span>
+                            </a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">
+
+    <svg  class="icon icon-chat"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-chat"></use></svg>
+
+                                <span class="hover">
+    <svg  class="icon icon-chat-fill"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-chat-fill"></use></svg>
+</span>
+                            </a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">
+
+    <svg  class="icon icon-bell"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-bell"></use></svg>
+
+                                <span class="hover">
+    <svg  class="icon icon-bell-fill"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-bell-fill"></use></svg>
+</span>
+                            </a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">
+
+    <svg  class="icon icon-coge"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-coge"></use></svg>
+
+                                <span class="hover">
+    <svg  class="icon icon-coge-fill"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-coge-fill"></use></svg>
+</span>
+                            </a>
+                </li>
+              </ul>
+              <div class="header__auth">
+                <div class="auth-menu js-dropdown">
+                  <div data-dropdown="trigger" class="auth-menu__user">
+                    <div class="auth-menu__user-pic">
+                      <svg class="icon icon-user-circle">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-user-circle"></use>
+                      </svg>
+                    </div>
+                    <div class="auth-menu__user-info d-none d-xxs-block">
+                      <div class="auth-menu__user-name"> ИП Сивасов И.А.</div>
+                    </div>
+                  </div>
+                  <div data-dropdown="drop" class="auth-menu__drop">
+                    <div class="auth-menu__info">
+                      <div class="auth-menu__user">
+                        <div class="auth-menu__user-pic">
+                          <svg class="icon icon-user-circle">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-user-circle"></use>
+                          </svg>
+                        </div>
+                        <div class="auth-menu__user-info">
+                          <div class="auth-menu__user-name">maxlapteff@gmail.com</div>
+                          <span class="auth-menu__access">Полный доступ</span>
+                        </div>
+                      </div>
+                      <div class="auth-menu__tariff">
+                        <svg class="icon icon-flag-circle">
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-flag-circle"></use>
+                        </svg> ИП, КХ и ТОО по упрощенному режиму без сотрудников <span class="auth-menu__access">действует до 14.09.2019</span>
+                      </div>
+                    </div>
+                    <ul class="auth-menu__nav">
+                      <li class="auth-menu__nav-item ">
+                        <a href="#" class="auth-menu__nav-link">
+
+    <svg  class="icon icon-build"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-build"></use></svg>
+
+                                            Управление организацией
+                                        </a>
+                      </li>
+                      <li class="auth-menu__nav-item ">
+                        <a href="#" class="auth-menu__nav-link">
+
+    <svg  class="icon icon-doc-edit"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-doc-edit"></use></svg>
+
+                                            Реквизиты и настройки
+                                        </a>
+                      </li>
+                      <li class="auth-menu__nav-item ">
+                        <a href="#" class="auth-menu__nav-link">
+
+    <svg  class="icon icon-docs-copy"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-docs-copy"></use></svg>
+
+                                            Мои документы
+                                        </a>
+                      </li>
+                      <li class="auth-menu__nav-item ">
+                        <a href="#" class="auth-menu__nav-link">
+
+    <svg  class="icon icon-sticker"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-sticker"></use></svg>
+
+                                            Визитка
+                                        </a>
+                      </li>
+                      <li class="auth-menu__nav-item m-t-30">
+                        <a href="#" class="auth-menu__nav-link">
+
+    <svg  class="icon icon-exit"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-exit"></use></svg>
+
+                                            Выйти из сервиса
+                                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="l-wrapper">
+        <div class="l-main">
+          <aside class="l-main__aside nav-sidebar">
+            <div class="sticky">
+              <div class="aside">
+                <ul class="aside__menu">
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-home"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-home"></use></svg>
+</span>
+                    <span>Главная</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-rouble"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-rouble"></use></svg>
+</span>
+                    <span>Деньги</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <ul class="aside__menu-sub">
+                      <li class="aside__menu-item">
+                        <a href="#" class="aside__menu-link">Акты</a>
+                      </li>
+                      <li class="aside__menu-item">
+                        <a href="#" class="aside__menu-link">Договора</a>
+                      </li>
+                      <li class="aside__menu-item">
+                        <a href="#" class="aside__menu-link">Поставки</a>
+                      </li>
+                      <li class="aside__menu-item">
+                        <a href="#" class="aside__menu-link">Учеты</a>
+                      </li>
+                    </ul>
+                    <a data-target-closest=".aside__menu-item" href="#" class="aside__menu-link  js-toggle">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-docs"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-docs"></use></svg>
+</span>
+                    <span>Документы</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-money"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-money"></use></svg>
+</span>
+                    <span>Зарплата</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-box"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-box"></use></svg>
+</span>
+                    <span>Товары</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-contract"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-contract"></use></svg>
+</span>
+                    <span>Договоры</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-user"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-user"></use></svg>
+</span>
+                    <span>Контрагенты</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-blank"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-blank"></use></svg>
+</span>
+                    <span>Бланки</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-report"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-report"></use></svg>
+</span>
+                    <span>Отчеты</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-stats"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-stats"></use></svg>
+</span>
+                    <span>Вебинары</span>
+                </a>
+                  </li>
+                </ul>
+                <ul class="aside__footer">
+                  <li class="aside__footer-item">
+                    <a href="#" class="aside__footer-link">Инструкции по сервису</a>
+                  </li>
+                  <li class="aside__footer-item">
+                    <a href="#" class="aside__footer-link">Помощь</a>
+                  </li>
+                  <li class="aside__footer-item">
+                    <a href="#" class="aside__footer-link">Еще</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </aside>
+          <main class="l-main__main">
+            <div class="box">
+              <div class="box__head">
+                <div class="row row-sm align-items-center justify-content-between flex-grow">
+                  <div class="col-auto">
+                    <h1 class="h1">оплата сервиса</h1>
+                  </div>
+                  <div class="col-auto">
+                    <div class="row row-sm">
+                      <div class="col-auto">
+                        <span class="link">
+                          <svg class="icon icon-clock">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-clock"></use>
+                          </svg> Оплачен до 13 июля 2019 г.</span>
+                      </div>
+                      <div class="col-auto">
+                        <a href="#" class="link text-blue">
+    <svg  class="icon icon-bill"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-bill"></use></svg>
+ История платежей</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <label class="form__label">Выберите тариф:</label>
+                  <div class="row">
+                    <div class="col-xxs-auto col-12">
+                      <label class="block-checkbox block-checkbox--block">
+                        <input type="radio" name="tariff">
+                        <span class="block-checkbox__i"> ИП, КХ и ТОО по упрощенному <br> режиму без сотрудников <br> (без НДС) </span>
+                      </label>
+                    </div>
+                    <div class="col-xxs-auto col-12">
+                      <label class="block-checkbox block-checkbox--block">
+                        <input type="radio" name="tariff">
+                        <span class="block-checkbox__i"> ИП, КХ и ТОО до 5 сотрудников <br> (без НДС) </span>
+                      </label>
+                    </div>
+                    <div class="col-xxs-auto col-12">
+                      <label class="block-checkbox block-checkbox--block">
+                        <input type="radio" name="tariff">
+                        <span class="block-checkbox__i"> ИП, КХ и ТОО по упрощенному <br> режиму до 50 сотрудников <br> (без НДС) </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="row">
+                    <div class="col-md-6 col-xxs-8 col-12">
+                      <label class="form__label">Промо-код: <span data-interactive="true" title="Здесь будут показаны Ваши операции после создания р/с. Для удобства работы при создании р/с подключите интеграцию с банком." class="tooltip">
+                          <svg class="icon icon-question-circle">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-question-circle"></use>
+                          </svg>
+                        </span></label>
+                      <input class="input">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="row">
+                    <div class="col-md-6 col-xxs-8 col-12">
+                      <label class="form__label">Срок и цена тарифа:</label>
+                      <select class="js-select">
+                        <option>1 год за 9 990 ₸</option>
+                        <option>1 год за 9 990 ₸</option>
+                        <option>1 год за 9 990 ₸</option>
+                        <option>1 год за 9 990 ₸</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="light-block">
+                    <label class="form__label">Способы оплаты:</label>
+                    <div class="row">
+                      <div class="col-sm-4 col-xxs-6 col-12">
+                        <label class="big-checkbox">
+                          <input type="radio" name="pay_type">
+                          <div class="big-checkbox__i"></div>
+                          <div class="big-checkbox__info">
+                            <div class="big-checkbox__img">
+                              <img src="./assets/img/payment-types/yk.png">
+                            </div>
+                            <div class="big-checkbox__label">Банковская карта (Яндекс.Касса)</div>
+                            <div class="big-checkbox__desc">Visa, MasterCard или Мир</div>
+                          </div>
+                        </label>
+                      </div>
+                      <div class="col-sm-4 col-xxs-6 col-12">
+                        <label class="big-checkbox">
+                          <input type="radio" name="pay_type">
+                          <div class="big-checkbox__i"></div>
+                          <div class="big-checkbox__info">
+                            <div class="big-checkbox__img">
+                              <img src="./assets/img/payment-types/pc.png">
+                            </div>
+                            <div class="big-checkbox__label">Банковская карта (Payment.Center)</div>
+                            <div class="big-checkbox__desc">Visa, MasterCard или Мир</div>
+                          </div>
+                        </label>
+                      </div>
+                      <div class="col-sm-4 col-xxs-6 col-12">
+                        <label class="big-checkbox">
+                          <input type="radio" name="pay_type">
+                          <div class="big-checkbox__i"></div>
+                          <div class="big-checkbox__info">
+                            <div class="big-checkbox__img">
+                              <img src="./assets/img/payment-types/cp.png">
+                            </div>
+                            <div class="big-checkbox__label">Банковская карта (CloudPayments)</div>
+                            <div class="big-checkbox__desc">Visa, MasterCard или Мир</div>
+                          </div>
+                        </label>
+                      </div>
+                      <div class="col-sm-4 col-xxs-6 col-12">
+                        <label class="big-checkbox">
+                          <input type="radio" name="pay_type">
+                          <div class="big-checkbox__i"></div>
+                          <div class="big-checkbox__info">
+                            <div class="big-checkbox__img">
+                              <img src="./assets/img/payment-types/bank.png">
+                            </div>
+                            <div class="big-checkbox__label">Перевод на расчётный счёт</div>
+                            <div class="big-checkbox__desc">Безналичный платёж через банк</div>
+                          </div>
+                        </label>
+                      </div>
+                      <div class="col-sm-4 col-xxs-6 col-12">
+                        <label class="big-checkbox">
+                          <input type="radio" name="pay_type">
+                          <div class="big-checkbox__i"></div>
+                          <div class="big-checkbox__info">
+                            <div class="big-checkbox__img">
+                              <img src="./assets/img/payment-types/hb.png">
+                            </div>
+                            <div class="big-checkbox__label">Квитанция Халык Банк</div>
+                            <div class="big-checkbox__desc">Оплата в ближайшем отделении Сбербанка</div>
+                          </div>
+                        </label>
+                      </div>
+                      <div class="col-sm-4 col-xxs-6 col-12">
+                        <label class="big-checkbox">
+                          <input type="radio" name="pay_type">
+                          <div class="big-checkbox__i"></div>
+                          <div class="big-checkbox__info">
+                            <div class="big-checkbox__img">
+                              <img src="./assets/img/payment-types/psb.png">
+                            </div>
+                            <div class="big-checkbox__label">Промсвязьбанк</div>
+                            <div class="big-checkbox__desc">Держателям счетов в Промсвязьбанке</div>
+                          </div>
+                        </label>
+                      </div>
+                      <div class="col-sm-4 col-xxs-6 col-12">
+                        <label class="big-checkbox">
+                          <input type="radio" name="pay_type">
+                          <div class="big-checkbox__i"></div>
+                          <div class="big-checkbox__info">
+                            <div class="big-checkbox__img">
+                              <div class="row row-sm">
+                                <div class="col-auto"><img src="./assets/img/payment-types/ym.png"></div>
+                                <div class="col-auto"><img src="./assets/img/payment-types/wm.png"></div>
+                                <div class="col-auto"><img src="./assets/img/payment-types/qiwi.png"></div>
+                                <div class="col-auto"><img src="./assets/img/payment-types/es.png"></div>
+                                <div class="col-auto"><img src="./assets/img/payment-types/so.png"></div>
+                              </div>
+                            </div>
+                            <div class="big-checkbox__label">Прочие способы оплаты</div>
+                            <div class="big-checkbox__desc">Электронные деньги, терминалы и прочее</div>
+                          </div>
+                        </label>
+                      </div>
+                      <div class="col-sm-8 col-12">
+                        <label class="big-checkbox">
+                          <input type="radio" name="pay_type">
+                          <div class="big-checkbox__i"></div>
+                          <div class="big-checkbox__info">
+                            <div class="big-checkbox__img">
+                              <img src="./assets/img/payment-types/tff.png">
+                            </div>
+                            <div class="big-checkbox__label">Оплата в кредит (Провайдер - «Тинькофф Кредитные Системы» Банк (АО))</div>
+                            <div class="big-checkbox__desc">Оплата заёмными средствами с помесячным погашением</div>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <span class="form__label m-b-0">К оплате:</span>
+                  <div class="pay-sum">9 990 <i class="tenge"></i></div>
+                </div>
+                <div class="col-12">
+                  <div class="row row-sm align-items-center">
+                    <div class="col-xs-auto col-12">
+                      <button type="submit" class="btn btn--round btn--lg btn--block text-medium"><span>продолжить оплату</span></button>
+                    </div>
+                    <div class="col-xs-auto col-12"> Нажимая на кнопку «Продолжить оплату», вы соглашаетесь <br> с <a href="#" class="link-underline"><span>условиями использования</span></a> сервиса «СМС». </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="assets/js/vendors.min.js?1569975057"></script>
+    <script type="text/javascript" src="assets/js/dropdown.js?1569975057"></script>
+    <script type="text/javascript" src="assets/js/tabs.js?1569975057"></script>
+    <script type="text/javascript" src="assets/js/map.js?1569975057"></script>
+    <script type="text/javascript" src="assets/js/helpers.js?1569975057"></script>
+    <script type="text/javascript" src="assets/js/swipeMenu.js?1569975057"></script>
+    <script type="text/javascript" src="assets/js/app.js?1569975057"></script>
+  </body>
+</html>

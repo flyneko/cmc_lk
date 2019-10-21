@@ -1,0 +1,176 @@
+---
+title: Деньги
+modals: [money-receipt, money-spending, money-profit]
+---
+{% extends "layouts/_layout.nunj" %}
+{% block content %}
+    <div class="box">
+        <div class="alert">
+            <div class="alert__text">
+                Выписка по счету 47745993772883883 была получена не за все дни. Вы можете повторно запросить выписку в другой день
+            </div>
+            <a href="#" class="alert__close">{{ mixins.icon('close-circle') }}</a>
+        </div>
+
+        <div class="m-b-15">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-sm col-12">
+                    <div class="row row-sm align-items-center">
+                        <div class="col-xs-auto col-12">
+                            <h3 class="h3">Добавить</h3>
+                        </div>
+                        <div class="col-auto">
+                            <a data-fancybox href="#money-receipt" class="btn btn--green"><span>Поступление &uarr;</span></a>
+                        </div>
+                        <div class="col-auto">
+                            <a data-fancybox href="#money-spending" class="btn btn--red"><span>Списание &darr;</span></a>
+                        </div>
+                        <div class="col-auto">
+                            <a data-fancybox href="#money-profit" class="btn btn--dark-blue"><span>Движение &larr; &rarr;</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-auto col-12">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <a href="#" class="link-underline"><span>Скачать кассовую книгу</span></a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="#" class="link-underline"><span>Скачать КУДИР</span></a>
+                            за
+                            <div class="inline-block vertical-bottom">
+                                <select data-class="select2-inline " class="js-select">
+                                    <option>2019</option>
+                                    <option>2018</option>
+                                    <option>2017</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-b-10">
+            <div class="row justify-content-end">
+                <div class="col-auto">
+                    <a href="#" class="link-underline"><span>Запросить выписку из Сбербанка</span></a>
+                </div>
+                <div class="col-auto">
+                    <a href="#" class="link-underline"><span>Импортировать выписку</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-b-20 js-tabs">
+            {% set tabs = {'Все': 'Все', 'Поступления': 'Поступления', 'Списания': 'Списания', 'Движения': 'Движения', 'Подробный_фильтр': 'Подробный фильтр'} %}
+            <div class="row align-items-center">
+                <div class="col-sm-auto col-12 text-medium">Показать:</div>
+                <div class="col-sm-auto col-12">
+                    <div class="simple-tabs">
+                        <ul class="simple-tabs__list">
+                            {% for k, v in tabs %}
+                                <li class="simple-tabs__item">
+                                    <a data-tabs="link" class="simple-tabs__link {% if loop.first %}is-active{% endif %}" href="#{{ k }}"><span>{{ v | safe }}</span></a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% for k, v in tabs %}
+                {% if loop.last %}
+                    <div id="{{ k }}" data-tabs="pane" {% if loop.first %}class="is-active"{% endif %}>
+                        <div class="light-block p-10">
+                            <div class="row row-sm">
+                                <div class="col-md-3 col-xxs-6 col-12">
+                                    <select data-class="select2-white" class="js-select">
+                                        <option>За все время</option>
+                                        <option>За неделю</option>
+                                        <option>За год</option>
+                                        <option>За 5 лет</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3 col-xxs-6 col-12">
+                                    <select data-class="select2-white" class="js-select">
+                                        <option>Все сотрудники</option>
+                                        <option>Директор</option>
+                                        <option>Заместитель</option>
+                                        <option>Сотрудник</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3 col-xxs-6 col-12">
+                                    <select data-class="select2-white" class="js-select">
+                                        <option>Все контрагенты</option>
+                                        <option>Кургинян Иван Алексеевич</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3 col-xxs-6 col-12">
+                                    <select data-class="select2-white" class="js-select">
+                                        <option>Все счета и касса</option>
+                                        <option>Счет в Сбербанке</option>
+                                        <option>1 год за 9 990 ₸</option>
+                                        <option>1 год за 9 990 ₸</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="m-b-10">
+            <div class="row row-sm">
+                {% for k, v in {
+                    'docs-copy': 'Копировать',
+                    'close': 'Удалить',
+                    'halyk': 'отправить в халыкбанк',
+                    'pdf': 'скачать в пдф',
+                    'xls': 'скачать в XLS',
+                    'down-doc': 'скачать п/п клиент-банка'
+                } %}
+                    <div class="col-auto">
+                        <a href="#" class="btn btn--xs btn--black">{{ mixins.icon(k) }} <span>{{ v }}</span></a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <table style="display: none;" class="js-table">
+            <thead>
+            <tr>
+                <th width="80" tabulator-headersort="1">Дата</th>
+                <th width="80" tabulator-formatter="html" tabulator-headersort="1">Доход</th>
+                <th width="80" tabulator-formatter="html" tabulator-headersort="1">Расход</th>
+                <th width="160" tabulator-formatter="html">Учитывать в НУ</th>
+                <th width="160" tabulator-formatter="html" tabulator-headersort="1">Тип</th>
+                <th width="160" tabulator-formatter="html">Контрагент</th>
+                <th tabulator-formatter="html">Описание</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in range(1, 99) %}
+                <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                </tr>
+                <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

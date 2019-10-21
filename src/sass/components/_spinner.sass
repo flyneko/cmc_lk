@@ -1,0 +1,25 @@
+.spinner
+  position: relative
+  &__controls
+    position: absolute
+    right: 10px
+    top: 50%
+    transform: translateY(-50%)
+  &__btn
+    border: 0
+    cursor: pointer
+    display: block
+    background-color: transparent
+    transition: 0.25s ease all
+    &[disabled]
+      opacity: 0.5
+    &:last-child
+      margin-bottom: 0
+    &--plus:before
+      +arr(7, 4, $style-color2, t)
+      margin-bottom: 7px
+    &--minus:before
+      +arr(7, 4, $style-color2, b)
+    &:before
+      display: block
+      content: ''

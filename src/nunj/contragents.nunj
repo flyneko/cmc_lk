@@ -1,0 +1,101 @@
+---
+title: контрагенты
+---
+{% extends "layouts/_layout.nunj" %}
+{% block content %}
+    <div class="box">
+        <div class="box__head">
+            <h1 class="h1">контрагенты</h1>
+        </div>
+
+        <div class="m-b-20">
+            <div class="row row-sm align-items-center">
+                <div class="col-xxs-auto col-12">
+                    <div class="btn-group">
+                        <a href="#" class="btn btn--block" aria-expanded="false"><span>Добавить</span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            {% for i in ['Контрагента', 'Работника', 'Директора'] %}
+                                <li class="dropdown-menu__item">
+                                    <a href="#" class="dropdown-menu__link">{{ i }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xxs-auto col-12">
+                    <a href="#" class="btn btn--block"><span>проверка контрагентов</span></a>
+                </div>
+
+                <div class="col-auto">
+                    <a href="#" class="link"><span>Выписка</span></a>
+                </div>
+
+                <div class="col-auto">
+                    <a href="#" class="link"><span>Скачать справочник</span></a>
+                </div>
+
+                <div class="col-auto">
+                    <a href="#" class="link">{{ mixins.icon('badge') }}<span>Метки</span></a>
+                </div>
+
+                <div class="col-lg col-12">
+                    <form autocomplete="off" class="complex-input" id="agents-search">
+                        <input class="input" placeholder="Найти контрагента....">
+                        <button class="complex-input__reset" type="reset"></button>
+                        <span class="complex-input__icon"> {{ mixins.icon('loupe') }} </span>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <table style="display: none;" data-search-form="#agents-search" class="js-table">
+            <thead>
+            <tr>
+                <th tabulator-formatter="html" tabulator-cssclass="left" tabulator-headersort="1">Имя</th>
+                <th width="130">Неоплач счета</th>
+                <th width="130">Доход</th>
+                <th width="130">Расход</th>
+                <th width="150" tabulator-formatter="html">Контакты</th>
+                <th width="60" tabulator-formatter="html">Заметки</th>
+                <th width="50" tabulator-formatter="html"></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in range(1, 99) %}
+                <tr>
+                    <td>
+                        <a class="text-blue" href="#">Мхитарян Вазген Гашевич</a>
+                        <span class="text-small flex-grow" style="width: 100%;">Покупатель/Поставщик</span>
+                    </td>
+                    <td>20 000</td>
+                    <td>578 500</td>
+                    <td>234 690</td>
+                    <td>
+                        {{ chunks.contacts_buttons() }}
+                    </td>
+                    <td>
+                        <ul class="actions">
+                            <li class="actions__item"><a href="#" class="actions__link">{{ mixins.icon('plus-circle') }}</a></li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul class="actions">
+                            <li class="actions__item">
+                                <a data-dropdown="trigger" href="#" class="actions__link text-blue">{{ mixins.icon('dots-circle') }}</a>
+                                <ul data-dropdown="drop" class="dropdown-menu dropdown-menu--arrow dropdown-menu--right">
+                                    {% for i in ['Контрагента', 'Работника', 'Директора'] %}
+                                        <li class="dropdown-menu__item">
+                                            <a href="#" class="dropdown-menu__link">{{ i }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        </ul>
+                    </td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,44 @@
+<div class="aside">
+    <ul class="aside__menu">
+        {% for k, v in {
+            'Главная': 'home',
+            'Деньги': 'rouble',
+            'Документы': 'docs',
+            'Зарплата': 'money',
+            'Товары': 'box',
+            'Договоры': 'contract',
+            'Контрагенты': 'user',
+            'Бланки': 'blank',
+            'Отчеты': 'report',
+            'Вебинары': 'stats'
+        } %}
+            <li class="aside__menu-item">
+                {% if k == 'Документы' %}
+                    <ul class="aside__menu-sub">
+                        {% for q in ['Акты', 'Договора', 'Поставки', 'Учеты'] %}
+                            <li class="aside__menu-item">
+                                <a href="#" class="aside__menu-link">{{ q }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                <a {% if k == 'Документы' %}data-target-closest=".aside__menu-item"{% endif %} href="#" class="aside__menu-link {% if k == 'Документы' %} js-toggle{% endif %}">
+                    <span class="aside__menu-icon">{{ mixins.icon(v) }}</span>
+                    <span>{{ k }}</span>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <ul class="aside__footer">
+        <li class="aside__footer-item">
+            <a href="#" class="aside__footer-link">Инструкции по сервису</a>
+        </li>
+        <li class="aside__footer-item">
+            <a href="#" class="aside__footer-link">Помощь</a>
+        </li>
+        <li class="aside__footer-item">
+            <a href="#" class="aside__footer-link">Еще</a>
+        </li>
+    </ul>
+</div>

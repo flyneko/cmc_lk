@@ -1,0 +1,24 @@
+.modal
+  display: none
+  width: 100%
+  background-color: #fff
+  transform: scale(.95) rotateX(7deg) translateY(10px)
+  transition: all .3s
+  opacity: 0
+  overflow: visible
+  border-radius: 5px
+  max-width: 670px
+  padding: 25px 30px
+  .fancybox-slide--current &
+    opacity: 1
+    transition-delay: .3s
+    transform:  scale(1) rotateX(0) translateY(0)
+  &-close
+    @extend .btn-close
+    position: absolute
+    right: -23px
+    top: -23px
+    +r($sm)
+      right: -10px
+  &__title
+    margin-bottom: 20px

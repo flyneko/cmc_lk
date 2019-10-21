@@ -1,0 +1,2987 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Деньги</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors.min.css?1569975057">
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css?1569975057">
+    <script type="text/javascript" src="assets/js/modernizr.js?1569975057"></script>
+    <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="modal" id="money-receipt">
+      <h2 class="h2 modal__title">создать поступление</h2>
+      <div class="m-b-30">
+        <div class="row row-sm">
+          <div class="col-12">
+            <h3 class="h3">Продажа</h3>
+          </div>
+          <div class="col-12">
+            <a href="#" class="link-underline"><span>Продажа товара</span></a>
+          </div>
+          <div class="col-12">
+            <a href="#" class="link-underline"><span>Оказание услуг</span></a>
+          </div>
+          <div class="col-12">
+            <a href="#" class="link-underline"><span>Выручка по кассе или БСО</span></a>
+          </div>
+          <div class="col-12">
+            <a href="#" class="link-underline"><span>По агентскому договору</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="m-b-30">
+        <div class="row row-sm">
+          <div class="col-12">
+            <h3 class="h3">Поступления, не связанные с продажами</h3>
+          </div>
+          <div class="col-12">
+            <a href="#" class="link-underline"><span>Взнос собственных средств</span></a>
+          </div>
+          <div class="col-12">
+            <a href="#" class="link-underline"><span>От третьих лиц и контрагентов</span></a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="row row-sm">
+          <div class="col-12">
+            <h3 class="h3">Прочие поступления</h3>
+          </div>
+          <div class="col-12">
+            <a href="#" class="link-underline"><span>Поступление (возврат) из бюджета</span></a>
+          </div>
+          <div class="col-12">
+            <a href="#" class="link-underline"><span>Доход в платежной системе</span></a>
+          </div>
+          <div class="col-12">
+            <a href="#" class="link-underline"><span>Поступление от покупки/продажи валюты</span></a>
+          </div>
+          <div class="col-12">
+            <a href="#" class="link-underline"><span>Прочие поступления</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="money-spending">
+      <h2 class="h2 modal__title">Расходы по основному виду деятельности</h2>
+      <form autocomplete="off">
+        <div class="form__row">
+          <div class="row row-sm align-items-center">
+            <div class="col-xs-4 col-12"><label class="form__label m-b-0">Деньги потрачены:</label></div>
+            <div class="col-xs-8 col-12">
+              <div class="row">
+                <div class="col-auto">
+                  <label class="checkbox">
+                    <input type="radio">
+                    <div class="checkbox__i"></div>
+                    <div class="checkbox__text">С расчетного счета</div>
+                  </label>
+                </div>
+                <div class="col-auto">
+                  <label class="checkbox">
+                    <input type="radio">
+                    <div class="checkbox__i"></div>
+                    <div class="checkbox__text">Наличными</div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="row row-sm">
+            <div class="col-xs-4 col-12"><label class="form__label m-b-0">Расчетный счет: </label></div>
+            <div class="col-xs-8 col-12"> 489074577350738053 в Алма-Аты N63477 ПАО Халык Банк </div>
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="row row-sm align-items-center">
+            <div class="col-xs-4 col-12"><label class="form__label m-b-0">Кому:</label></div>
+            <div class="col-xs-8 col-12">
+              <input class="input" type="text" placeholder="ФИО контрагента">
+            </div>
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="row row-sm align-items-center">
+            <div class="col-xs-4 col-12"><label class="form__label m-b-0">Расчетный счет контрагента: </label></div>
+            <div class="col-xs-8 col-12">489074577350738053 <i class="tenge"></i></div>
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="row row-sm">
+            <div class="col-xs-4 col-12"><label class="form__label m-b-0">Списание: </label></div>
+            <div class="col-xs-8 col-12">
+              <div class="row row-sm">
+                <div class="col-12">
+                  <label class="checkbox">
+                    <input type="radio">
+                    <div class="checkbox__i"></div>
+                    <div class="checkbox__text">С потверждающим документом</div>
+                  </label>
+                </div>
+                <div class="col-12">
+                  <label class="checkbox">
+                    <input type="radio">
+                    <div class="checkbox__i"></div>
+                    <div class="checkbox__text">Учитывать по дате оплаты</div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="row row-sm align-items-center">
+            <div class="col-xs-4 col-12"><label class="form__label m-b-0">Потверждающие накладные:</label></div>
+            <div class="col-xs-8 col-12">
+              <div class="row row-sm">
+                <div class="col-auto">Нет</div>
+                <div class="col-auto"><a href="#" class="text-blue">Добавить накладную</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form__row m-b-40">
+          <div class="row row-sm align-items-center">
+            <div class="col-xs-4 col-12"><label class="form__label m-b-0">Потверждающие акты: </label></div>
+            <div class="col-xs-8 col-12">
+              <div class="row row-sm">
+                <div class="col-auto">Да</div>
+                <div class="col-auto"><a href="#" class="text-blue">Добавить акт</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="row row-sm align-items-center">
+            <div class="col-xs-4 col-12"><label class="form__label m-b-0">По договору:</label></div>
+            <div class="col-xs-8 col-12">
+              <input class="input" type="text" placeholder="№">
+            </div>
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="row row-sm align-items-center">
+            <div class="col-xs-4 col-12"><label class="form__label m-b-0">Сумма:</label></div>
+            <div class="col-xs-8 col-12">
+              <div class="complex-input">
+                <input class="input">
+                <div class="complex-input__icon"><i class="tenge"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="row row-sm align-items-center">
+            <div class="col-xs-4 col-12"><label class="form__label m-b-0">Дата:</label></div>
+            <div class="col-xs-8 col-12">
+              <div class="complex-input">
+                <input class="input js-datepicker">
+                <div class="complex-input__icon">
+                  <svg class="icon icon-calendar">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-calendar"></use>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="row row-sm align-items-center">
+            <div class="col-xs-4 col-12"><label class="form__label m-b-0">Номер платежного паручения:</label></div>
+            <div class="col-xs-8 col-12">
+              <input class="input" type="text" placeholder="№">
+            </div>
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="row row-sm">
+            <div class="col-xs-4 col-12"><label class="form__label m-b-0">Назначение платежа:</label></div>
+            <div class="col-xs-8 col-12">
+              <textarea class="input"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="row">
+            <div class="col-xs-4 col-12">
+            </div>
+            <div class="col-xs-8 col-12">
+              <div class="row">
+                <div class="col-xs-4 col-12">
+                  <div class="btn-group">
+                    <a href="#" class="btn btn--block" aria-expanded="false"><span>Сохранить</span></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li class="dropdown-menu__item">
+                        <a href="#" class="dropdown-menu__link">Счет</a>
+                      </li>
+                      <li class="dropdown-menu__item">
+                        <a href="#" class="dropdown-menu__link">Накладная</a>
+                      </li>
+                      <li class="dropdown-menu__item">
+                        <a href="#" class="dropdown-menu__link">Акт</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-xs-8 col-12">
+                  <a href="#" class="btn btn--block">
+    <svg  class="icon icon-bank"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-bank"></use></svg>
+<span>сохранить и отправить в банк</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal" id="money-profit">
+      <h2 class="h2 modal__title m-b-10">доход от продажи товара</h2>
+      <div class="js-tabs">
+        <div class="tabs tabs--lg">
+          <ul class="tabs__list">
+            <li class="tabs__bar" data-tabs="bar"></li>
+            <li class="tabs__item">
+              <a data-tabs="link" class="tabs__link is-active" href="#От_клиента_напрямую"><span>От клиента напрямую</span></a>
+            </li>
+            <li class="tabs__item">
+              <a data-tabs="link" class="tabs__link " href="#Через_посредника"><span>Через посредника</span></a>
+            </li>
+            <li class="tabs__item">
+              <a data-tabs="link" class="tabs__link " href="#С_эквайрингом"><span>С эквайрингом</span></a>
+            </li>
+          </ul>
+        </div>
+        <div id="От_клиента_напрямую" data-tabs="pane" class="is-active">
+          <form autocomplete="off">
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Деньги потрачены:</label></div>
+                <div class="col-xs-8 col-12">
+                  <div class="row">
+                    <div class="col-auto">
+                      <label class="checkbox">
+                        <input type="radio">
+                        <div class="checkbox__i"></div>
+                        <div class="checkbox__text">С расчетного счета</div>
+                      </label>
+                    </div>
+                    <div class="col-auto">
+                      <label class="checkbox">
+                        <input type="radio">
+                        <div class="checkbox__i"></div>
+                        <div class="checkbox__text">Наличными</div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Расчетный счет: </label></div>
+                <div class="col-xs-8 col-12"> 489074577350738053 в Алма-Аты N63477 ПАО Халык Банк </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">От клиента:</label></div>
+                <div class="col-xs-8 col-12">
+                  <input class="input" type="text" placeholder="ФИО клиента">
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Потверждающие накладные:</label></div>
+                <div class="col-xs-8 col-12">
+                  <div class="row row-sm">
+                    <div class="col-auto">Нет</div>
+                    <div class="col-auto"><a href="#" class="text-blue">Добавить накладную</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">По договору:</label></div>
+                <div class="col-xs-8 col-12">
+                  <input class="input" type="text" placeholder="№">
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">По счету:</label></div>
+                <div class="col-xs-8 col-12">
+                  <input class="input" type="text" placeholder="№">
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Сумма поступления на счет:</label></div>
+                <div class="col-xs-8 col-12">
+                  <div class="complex-input">
+                    <input class="input">
+                    <div class="complex-input__icon"><i class="tenge"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Дата поступления на счет:</label></div>
+                <div class="col-xs-8 col-12">
+                  <div class="complex-input">
+                    <input class="input js-datepicker">
+                    <div class="complex-input__icon">
+                      <svg class="icon icon-calendar">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-calendar"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Комиссия эквайринг:</label></div>
+                <div class="col-xs-8 col-12">
+                  <div class="row">
+                    <div class="col-7">
+                      <div class="complex-input">
+                        <input class="input">
+                        <div class="complex-input__icon"><i class="tenge"></i></div>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="complex-input">
+                        <input class="input js-datepicker">
+                        <div class="complex-input__icon">
+                          <svg class="icon icon-calendar">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-calendar"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row"> Итого оплата от покупателя по банковским картам: 21 500 <i class="tenge"></i> <span data-interactive="true" title="Здесь будут показаны Ваши операции после создания р/с. Для удобства работы при создании р/с подключите интеграцию с банком." class="tooltip">
+                <svg class="icon icon-question-circle">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-question-circle"></use>
+                </svg>
+              </span>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Номер платежного паручения:</label></div>
+                <div class="col-xs-8 col-12">
+                  <input class="input" type="text" placeholder="№">
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Описание платежа:</label></div>
+                <div class="col-xs-8 col-12">
+                  <textarea class="input"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-12">
+                  <h3 class="h3">Что попадает в налоговую отчетность:</h3>
+                </div>
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Cумма дохода, учитываемая в УСН</label></div>
+                <div class="col-xs-8 col-12">
+                  <div class="complex-input">
+                    <input class="input">
+                    <div class="complex-input__icon"><i class="tenge"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row align-items-center">
+                <div class="col-xs-4 col-12">
+                  <a href="#" class="link-underline"><span>Сменить тип поступления</span></a>
+                </div>
+                <div class="col-xs-8 col-12">
+                  <div class="row">
+                    <div class="col-xs-4 col-12">
+                      <a href="#" class="btn btn--block"><span>Сохранить</span></a>
+                    </div>
+                    <div class="col-xs-8 col-12">
+                      <a href="#" class="btn btn--block"><span>сохранить и создать новое</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div id="Через_посредника" data-tabs="pane">
+          <form autocomplete="off">
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Деньги потрачены:</label></div>
+                <div class="col-xs-8 col-12">
+                  <div class="row">
+                    <div class="col-auto">
+                      <label class="checkbox">
+                        <input type="radio">
+                        <div class="checkbox__i"></div>
+                        <div class="checkbox__text">С расчетного счета</div>
+                      </label>
+                    </div>
+                    <div class="col-auto">
+                      <label class="checkbox">
+                        <input type="radio">
+                        <div class="checkbox__i"></div>
+                        <div class="checkbox__text">Наличными</div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Расчетный счет: </label></div>
+                <div class="col-xs-8 col-12"> 489074577350738053 в Алма-Аты N63477 ПАО Халык Банк </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">От клиента:</label></div>
+                <div class="col-xs-8 col-12">
+                  <input class="input" type="text" placeholder="ФИО клиента">
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Потверждающие накладные:</label></div>
+                <div class="col-xs-8 col-12">
+                  <div class="row row-sm">
+                    <div class="col-auto">Нет</div>
+                    <div class="col-auto"><a href="#" class="text-blue">Добавить накладную</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">По договору:</label></div>
+                <div class="col-xs-8 col-12">
+                  <input class="input" type="text" placeholder="№">
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">По счету:</label></div>
+                <div class="col-xs-8 col-12">
+                  <input class="input" type="text" placeholder="№">
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Сумма поступления на счет:</label></div>
+                <div class="col-xs-8 col-12">
+                  <div class="complex-input">
+                    <input class="input">
+                    <div class="complex-input__icon"><i class="tenge"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Дата поступления на счет:</label></div>
+                <div class="col-xs-8 col-12">
+                  <div class="complex-input">
+                    <input class="input js-datepicker">
+                    <div class="complex-input__icon">
+                      <svg class="icon icon-calendar">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-calendar"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Комиссия эквайринг:</label></div>
+                <div class="col-xs-8 col-12">
+                  <div class="row">
+                    <div class="col-7">
+                      <div class="complex-input">
+                        <input class="input">
+                        <div class="complex-input__icon"><i class="tenge"></i></div>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="complex-input">
+                        <input class="input js-datepicker">
+                        <div class="complex-input__icon">
+                          <svg class="icon icon-calendar">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-calendar"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row"> Итого оплата от покупателя по банковским картам: 21 500 <i class="tenge"></i> <span data-interactive="true" title="Здесь будут показаны Ваши операции после создания р/с. Для удобства работы при создании р/с подключите интеграцию с банком." class="tooltip">
+                <svg class="icon icon-question-circle">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-question-circle"></use>
+                </svg>
+              </span>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Номер платежного паручения:</label></div>
+                <div class="col-xs-8 col-12">
+                  <input class="input" type="text" placeholder="№">
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Описание платежа:</label></div>
+                <div class="col-xs-8 col-12">
+                  <textarea class="input"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-12">
+                  <h3 class="h3">Что попадает в налоговую отчетность:</h3>
+                </div>
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Cумма дохода, учитываемая в УСН</label></div>
+                <div class="col-xs-8 col-12">
+                  <div class="complex-input">
+                    <input class="input">
+                    <div class="complex-input__icon"><i class="tenge"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row align-items-center">
+                <div class="col-xs-4 col-12">
+                  <a href="#" class="link-underline"><span>Сменить тип поступления</span></a>
+                </div>
+                <div class="col-xs-8 col-12">
+                  <div class="row">
+                    <div class="col-xs-4 col-12">
+                      <a href="#" class="btn btn--block"><span>Сохранить</span></a>
+                    </div>
+                    <div class="col-xs-8 col-12">
+                      <a href="#" class="btn btn--block"><span>сохранить и создать новое</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div id="С_эквайрингом" data-tabs="pane">
+          <form autocomplete="off">
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Деньги потрачены:</label></div>
+                <div class="col-xs-8 col-12">
+                  <div class="row">
+                    <div class="col-auto">
+                      <label class="checkbox">
+                        <input type="radio">
+                        <div class="checkbox__i"></div>
+                        <div class="checkbox__text">С расчетного счета</div>
+                      </label>
+                    </div>
+                    <div class="col-auto">
+                      <label class="checkbox">
+                        <input type="radio">
+                        <div class="checkbox__i"></div>
+                        <div class="checkbox__text">Наличными</div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Расчетный счет: </label></div>
+                <div class="col-xs-8 col-12"> 489074577350738053 в Алма-Аты N63477 ПАО Халык Банк </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">От клиента:</label></div>
+                <div class="col-xs-8 col-12">
+                  <input class="input" type="text" placeholder="ФИО клиента">
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Потверждающие накладные:</label></div>
+                <div class="col-xs-8 col-12">
+                  <div class="row row-sm">
+                    <div class="col-auto">Нет</div>
+                    <div class="col-auto"><a href="#" class="text-blue">Добавить накладную</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">По договору:</label></div>
+                <div class="col-xs-8 col-12">
+                  <input class="input" type="text" placeholder="№">
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">По счету:</label></div>
+                <div class="col-xs-8 col-12">
+                  <input class="input" type="text" placeholder="№">
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Сумма поступления на счет:</label></div>
+                <div class="col-xs-8 col-12">
+                  <div class="complex-input">
+                    <input class="input">
+                    <div class="complex-input__icon"><i class="tenge"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Дата поступления на счет:</label></div>
+                <div class="col-xs-8 col-12">
+                  <div class="complex-input">
+                    <input class="input js-datepicker">
+                    <div class="complex-input__icon">
+                      <svg class="icon icon-calendar">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-calendar"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Комиссия эквайринг:</label></div>
+                <div class="col-xs-8 col-12">
+                  <div class="row">
+                    <div class="col-7">
+                      <div class="complex-input">
+                        <input class="input">
+                        <div class="complex-input__icon"><i class="tenge"></i></div>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="complex-input">
+                        <input class="input js-datepicker">
+                        <div class="complex-input__icon">
+                          <svg class="icon icon-calendar">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-calendar"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row"> Итого оплата от покупателя по банковским картам: 21 500 <i class="tenge"></i> <span data-interactive="true" title="Здесь будут показаны Ваши операции после создания р/с. Для удобства работы при создании р/с подключите интеграцию с банком." class="tooltip">
+                <svg class="icon icon-question-circle">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-question-circle"></use>
+                </svg>
+              </span>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Номер платежного паручения:</label></div>
+                <div class="col-xs-8 col-12">
+                  <input class="input" type="text" placeholder="№">
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm">
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Описание платежа:</label></div>
+                <div class="col-xs-8 col-12">
+                  <textarea class="input"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row row-sm align-items-center">
+                <div class="col-12">
+                  <h3 class="h3">Что попадает в налоговую отчетность:</h3>
+                </div>
+                <div class="col-xs-4 col-12"><label class="form__label m-b-0">Cумма дохода, учитываемая в УСН</label></div>
+                <div class="col-xs-8 col-12">
+                  <div class="complex-input">
+                    <input class="input">
+                    <div class="complex-input__icon"><i class="tenge"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="row align-items-center">
+                <div class="col-xs-4 col-12">
+                  <a href="#" class="link-underline"><span>Сменить тип поступления</span></a>
+                </div>
+                <div class="col-xs-8 col-12">
+                  <div class="row">
+                    <div class="col-xs-4 col-12">
+                      <a href="#" class="btn btn--block"><span>Сохранить</span></a>
+                    </div>
+                    <div class="col-xs-8 col-12">
+                      <a href="#" class="btn btn--block"><span>сохранить и создать новое</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="l-body">
+      <header class="header">
+        <div class="l-wrapper">
+          <div class="header__inn">
+            <div class="header__left nav-sidebar">
+              <a class="js-nav-trigger" href="#">
+                    <div class="hamburger"></div>
+                </a>
+              <a href="." class="header__logo">
+                    <img src="./assets/img/logo.svg">
+                </a>
+            </div>
+            <div class="header__right">
+              <div class="header__pay d-none d-lg-flex">
+                <a href="#" class="btn btn--block btn--round btn--blue btn--md">
+                        <span>оплата сервиса</span>
+                    </a>
+              </div>
+              <a href="#" class="header__balance d-none d-md-flex">
+
+    <svg  class="icon icon-wallet"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-wallet"></use></svg>
+
+                    <span>Основной счет: 900,50 <i class="tenge"></i></span>
+                </a>
+              <ul class="header__menu d-none d-sm-flex">
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">
+
+    <svg  class="icon icon-flag"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-flag"></use></svg>
+
+                                <span class="hover">
+    <svg  class="icon icon-flag-fill"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-flag-fill"></use></svg>
+</span>
+                            </a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">
+
+    <svg  class="icon icon-chat"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-chat"></use></svg>
+
+                                <span class="hover">
+    <svg  class="icon icon-chat-fill"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-chat-fill"></use></svg>
+</span>
+                            </a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">
+
+    <svg  class="icon icon-bell"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-bell"></use></svg>
+
+                                <span class="hover">
+    <svg  class="icon icon-bell-fill"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-bell-fill"></use></svg>
+</span>
+                            </a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">
+
+    <svg  class="icon icon-coge"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-coge"></use></svg>
+
+                                <span class="hover">
+    <svg  class="icon icon-coge-fill"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-coge-fill"></use></svg>
+</span>
+                            </a>
+                </li>
+              </ul>
+              <div class="header__auth">
+                <div class="auth-menu js-dropdown">
+                  <div data-dropdown="trigger" class="auth-menu__user">
+                    <div class="auth-menu__user-pic">
+                      <svg class="icon icon-user-circle">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-user-circle"></use>
+                      </svg>
+                    </div>
+                    <div class="auth-menu__user-info d-none d-xxs-block">
+                      <div class="auth-menu__user-name"> ИП Сивасов И.А.</div>
+                    </div>
+                  </div>
+                  <div data-dropdown="drop" class="auth-menu__drop">
+                    <div class="auth-menu__info">
+                      <div class="auth-menu__user">
+                        <div class="auth-menu__user-pic">
+                          <svg class="icon icon-user-circle">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-user-circle"></use>
+                          </svg>
+                        </div>
+                        <div class="auth-menu__user-info">
+                          <div class="auth-menu__user-name">maxlapteff@gmail.com</div>
+                          <span class="auth-menu__access">Полный доступ</span>
+                        </div>
+                      </div>
+                      <div class="auth-menu__tariff">
+                        <svg class="icon icon-flag-circle">
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-flag-circle"></use>
+                        </svg> ИП, КХ и ТОО по упрощенному режиму без сотрудников <span class="auth-menu__access">действует до 14.09.2019</span>
+                      </div>
+                    </div>
+                    <ul class="auth-menu__nav">
+                      <li class="auth-menu__nav-item ">
+                        <a href="#" class="auth-menu__nav-link">
+
+    <svg  class="icon icon-build"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-build"></use></svg>
+
+                                            Управление организацией
+                                        </a>
+                      </li>
+                      <li class="auth-menu__nav-item ">
+                        <a href="#" class="auth-menu__nav-link">
+
+    <svg  class="icon icon-doc-edit"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-doc-edit"></use></svg>
+
+                                            Реквизиты и настройки
+                                        </a>
+                      </li>
+                      <li class="auth-menu__nav-item ">
+                        <a href="#" class="auth-menu__nav-link">
+
+    <svg  class="icon icon-docs-copy"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-docs-copy"></use></svg>
+
+                                            Мои документы
+                                        </a>
+                      </li>
+                      <li class="auth-menu__nav-item ">
+                        <a href="#" class="auth-menu__nav-link">
+
+    <svg  class="icon icon-sticker"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-sticker"></use></svg>
+
+                                            Визитка
+                                        </a>
+                      </li>
+                      <li class="auth-menu__nav-item m-t-30">
+                        <a href="#" class="auth-menu__nav-link">
+
+    <svg  class="icon icon-exit"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-exit"></use></svg>
+
+                                            Выйти из сервиса
+                                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="l-wrapper">
+        <div class="l-main">
+          <aside class="l-main__aside nav-sidebar">
+            <div class="sticky">
+              <div class="aside">
+                <ul class="aside__menu">
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-home"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-home"></use></svg>
+</span>
+                    <span>Главная</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-rouble"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-rouble"></use></svg>
+</span>
+                    <span>Деньги</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <ul class="aside__menu-sub">
+                      <li class="aside__menu-item">
+                        <a href="#" class="aside__menu-link">Акты</a>
+                      </li>
+                      <li class="aside__menu-item">
+                        <a href="#" class="aside__menu-link">Договора</a>
+                      </li>
+                      <li class="aside__menu-item">
+                        <a href="#" class="aside__menu-link">Поставки</a>
+                      </li>
+                      <li class="aside__menu-item">
+                        <a href="#" class="aside__menu-link">Учеты</a>
+                      </li>
+                    </ul>
+                    <a data-target-closest=".aside__menu-item" href="#" class="aside__menu-link  js-toggle">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-docs"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-docs"></use></svg>
+</span>
+                    <span>Документы</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-money"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-money"></use></svg>
+</span>
+                    <span>Зарплата</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-box"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-box"></use></svg>
+</span>
+                    <span>Товары</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-contract"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-contract"></use></svg>
+</span>
+                    <span>Договоры</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-user"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-user"></use></svg>
+</span>
+                    <span>Контрагенты</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-blank"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-blank"></use></svg>
+</span>
+                    <span>Бланки</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-report"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-report"></use></svg>
+</span>
+                    <span>Отчеты</span>
+                </a>
+                  </li>
+                  <li class="aside__menu-item">
+                    <a  href="#" class="aside__menu-link ">
+                    <span class="aside__menu-icon">
+    <svg  class="icon icon-stats"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-stats"></use></svg>
+</span>
+                    <span>Вебинары</span>
+                </a>
+                  </li>
+                </ul>
+                <ul class="aside__footer">
+                  <li class="aside__footer-item">
+                    <a href="#" class="aside__footer-link">Инструкции по сервису</a>
+                  </li>
+                  <li class="aside__footer-item">
+                    <a href="#" class="aside__footer-link">Помощь</a>
+                  </li>
+                  <li class="aside__footer-item">
+                    <a href="#" class="aside__footer-link">Еще</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </aside>
+          <main class="l-main__main">
+            <div class="box">
+              <div class="alert">
+                <div class="alert__text"> Выписка по счету 47745993772883883 была получена не за все дни. Вы можете повторно запросить выписку в другой день </div>
+                <a href="#" class="alert__close">
+    <svg  class="icon icon-close-circle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-close-circle"></use></svg>
+</a>
+              </div>
+              <div class="m-b-15">
+                <div class="row align-items-center justify-content-between">
+                  <div class="col-sm col-12">
+                    <div class="row row-sm align-items-center">
+                      <div class="col-xs-auto col-12">
+                        <h3 class="h3">Добавить</h3>
+                      </div>
+                      <div class="col-auto">
+                        <a data-fancybox href="#money-receipt" class="btn btn--green"><span>Поступление &uarr;</span></a>
+                      </div>
+                      <div class="col-auto">
+                        <a data-fancybox href="#money-spending" class="btn btn--red"><span>Списание &darr;</span></a>
+                      </div>
+                      <div class="col-auto">
+                        <a data-fancybox href="#money-profit" class="btn btn--dark-blue"><span>Движение &larr; &rarr;</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-auto col-12">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <a href="#" class="link-underline"><span>Скачать кассовую книгу</span></a>
+                      </div>
+                      <div class="col-auto">
+                        <a href="#" class="link-underline"><span>Скачать КУДИР</span></a> за <div class="inline-block vertical-bottom">
+                          <select data-class="select2-inline " class="js-select">
+                            <option>2019</option>
+                            <option>2018</option>
+                            <option>2017</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="m-b-10">
+                <div class="row justify-content-end">
+                  <div class="col-auto">
+                    <a href="#" class="link-underline"><span>Запросить выписку из Сбербанка</span></a>
+                  </div>
+                  <div class="col-auto">
+                    <a href="#" class="link-underline"><span>Импортировать выписку</span></a>
+                  </div>
+                </div>
+              </div>
+              <div class="m-b-20 js-tabs">
+                <div class="row align-items-center">
+                  <div class="col-sm-auto col-12 text-medium">Показать:</div>
+                  <div class="col-sm-auto col-12">
+                    <div class="simple-tabs">
+                      <ul class="simple-tabs__list">
+                        <li class="simple-tabs__item">
+                          <a data-tabs="link" class="simple-tabs__link is-active" href="#Все"><span>Все</span></a>
+                        </li>
+                        <li class="simple-tabs__item">
+                          <a data-tabs="link" class="simple-tabs__link " href="#Поступления"><span>Поступления</span></a>
+                        </li>
+                        <li class="simple-tabs__item">
+                          <a data-tabs="link" class="simple-tabs__link " href="#Списания"><span>Списания</span></a>
+                        </li>
+                        <li class="simple-tabs__item">
+                          <a data-tabs="link" class="simple-tabs__link " href="#Движения"><span>Движения</span></a>
+                        </li>
+                        <li class="simple-tabs__item">
+                          <a data-tabs="link" class="simple-tabs__link " href="#Подробный_фильтр"><span>Подробный фильтр</span></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div id="Подробный_фильтр" data-tabs="pane">
+                  <div class="light-block p-10">
+                    <div class="row row-sm">
+                      <div class="col-md-3 col-xxs-6 col-12">
+                        <select data-class="select2-white" class="js-select">
+                          <option>За все время</option>
+                          <option>За неделю</option>
+                          <option>За год</option>
+                          <option>За 5 лет</option>
+                        </select>
+                      </div>
+                      <div class="col-md-3 col-xxs-6 col-12">
+                        <select data-class="select2-white" class="js-select">
+                          <option>Все сотрудники</option>
+                          <option>Директор</option>
+                          <option>Заместитель</option>
+                          <option>Сотрудник</option>
+                        </select>
+                      </div>
+                      <div class="col-md-3 col-xxs-6 col-12">
+                        <select data-class="select2-white" class="js-select">
+                          <option>Все контрагенты</option>
+                          <option>Кургинян Иван Алексеевич</option>
+                        </select>
+                      </div>
+                      <div class="col-md-3 col-xxs-6 col-12">
+                        <select data-class="select2-white" class="js-select">
+                          <option>Все счета и касса</option>
+                          <option>Счет в Сбербанке</option>
+                          <option>1 год за 9 990 ₸</option>
+                          <option>1 год за 9 990 ₸</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="m-b-10">
+                <div class="row row-sm">
+                  <div class="col-auto">
+                    <a href="#" class="btn btn--xs btn--black">
+    <svg  class="icon icon-docs-copy"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-docs-copy"></use></svg>
+ <span>Копировать</span></a>
+                  </div>
+                  <div class="col-auto">
+                    <a href="#" class="btn btn--xs btn--black">
+    <svg  class="icon icon-close"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-close"></use></svg>
+ <span>Удалить</span></a>
+                  </div>
+                  <div class="col-auto">
+                    <a href="#" class="btn btn--xs btn--black">
+    <svg  class="icon icon-halyk"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-halyk"></use></svg>
+ <span>отправить в халыкбанк</span></a>
+                  </div>
+                  <div class="col-auto">
+                    <a href="#" class="btn btn--xs btn--black">
+    <svg  class="icon icon-pdf"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-pdf"></use></svg>
+ <span>скачать в пдф</span></a>
+                  </div>
+                  <div class="col-auto">
+                    <a href="#" class="btn btn--xs btn--black">
+    <svg  class="icon icon-xls"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-xls"></use></svg>
+ <span>скачать в XLS</span></a>
+                  </div>
+                  <div class="col-auto">
+                    <a href="#" class="btn btn--xs btn--black">
+    <svg  class="icon icon-down-doc"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/sprite.svg#icon-down-doc"></use></svg>
+ <span>скачать п/п клиент-банка</span></a>
+                  </div>
+                </div>
+              </div>
+              <table style="display: none;" class="js-table">
+                <thead>
+                  <tr>
+                    <th width="80" tabulator-headersort="1">Дата</th>
+                    <th width="80" tabulator-formatter="html" tabulator-headersort="1">Доход</th>
+                    <th width="80" tabulator-formatter="html" tabulator-headersort="1">Расход</th>
+                    <th width="160" tabulator-formatter="html">Учитывать в НУ</th>
+                    <th width="160" tabulator-formatter="html" tabulator-headersort="1">Тип</th>
+                    <th width="160" tabulator-formatter="html">Контрагент</th>
+                    <th tabulator-formatter="html">Описание</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td><span class="text-success">569 000</span></td>
+                    <td></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                  <tr>
+                    <td> 13.06.19</td>
+                    <td></td>
+                    <td><span class="text-danger">40 000</span></td>
+                    <td></td>
+                    <td>Расходы по виду деятельности</td>
+                    <td><a href="#" class="link-underline"><span>Кургинян Иван Алексеевич</span></a></td>
+                    <td>НДС не облагается</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="assets/js/vendors.min.js?1569975057"></script>
+    <script type="text/javascript" src="assets/js/dropdown.js?1569975057"></script>
+    <script type="text/javascript" src="assets/js/tabs.js?1569975057"></script>
+    <script type="text/javascript" src="assets/js/map.js?1569975057"></script>
+    <script type="text/javascript" src="assets/js/helpers.js?1569975057"></script>
+    <script type="text/javascript" src="assets/js/swipeMenu.js?1569975057"></script>
+    <script type="text/javascript" src="assets/js/app.js?1569975057"></script>
+  </body>
+</html>

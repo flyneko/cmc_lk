@@ -1,0 +1,91 @@
+---
+title: Реквизиты
+modals: [passport, tax-codes]
+---
+{% extends "layouts/_layout.nunj" %}
+{% block content %}
+    <div class="box">
+        <div class="row">
+            <div class="col-12 d-sm-none">
+                <a data-target="#req-nav" href="#" class="js-toggle btn btn--md btn--round btn--block">{{ mixins.icon('list') }}<span>Открыть меню</span></a>
+            </div>
+            <div id="req-nav" class="col-xl-2 col-lg-3 col-sm-4 d-none d-sm-block">
+                <ul class="nav sticky">
+                    <li class="nav__item nav__item--dropdown is-toggle-open">
+                        <a href="#" class="nav__link js-toggle" data-target-closest=".nav__item">Реквизиты организации</a>
+                        <ul class="nav__sub">
+                            <li class="nav__item"><a href="#" class="nav__link">Регистрационные сведения</a></li>
+                            <li class="nav__item"><a href="#" class="nav__link">Адреса организации</a></li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">Ведомства</a>
+                                <ul class="nav__sub">
+                                    {% for i in ['ФНС', 'ПФР', 'Росстат'] %}
+                                        <li class="nav__item"><a href="#" class="nav__link">{{ i }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <li class="nav__item"><a href="#" class="nav__link">Паспортные данные</a></li>
+                        </ul>
+                    </li>
+                    
+                    {% for i in [' Электронная отчетность', 'Деньги', 'Системы налооблажения', 'Запасы и покупки', 'Документы', 'Настройка аккаунта', 'Интеграция с партнерами'] %}
+                        <li class="nav__item"><a href="#" class="nav__link">{{ i }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-xl-10 col-lg-9 col-sm-8 col-12">
+                <div class="m-b-30">
+                    <h2 class="h2 m-b-10">реквизиты организации</h2>
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="#" class="req">
+                                <span class="req__title">ИП Хачатурян Арсен Гигович</span>
+                                ИНН: 255466155232 <br>
+                                Дата гос. регистрации: 12.04.2017г.
+                            </a>
+                        </div>
+                        <div class="col-12">
+                            <a href="#" class="req">
+                                <span class="req__title">355255, Московская область, г. Химки, ул. Дубовая, д.24</span>
+                                ОКТМО: 03746611
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-b-30">
+                    <h2 class="h2 m-b-10">Ведомства</h2>
+                    <div class="m-b-15">Службы, в которые вы сдаете отчеты</div>
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="#" class="req">
+                                <span class="req__title">2301 - Инспеция Федеральной налоговой службы по Московской области</span>
+                                ФНС
+                            </a>
+                        </div>
+                        <div class="col-12">
+                            <a href="#" class="req">
+                                <span class="req__title">Отделение ПФР: 033-001 -  УПФР по г. Химки</span>
+                                Регистрационный номер в ПФР: 033-002-387-366266
+                            </a>
+                        </div>
+                        <div class="col-12">
+                            <a data-fancybox href="#tax-codes" class="req">
+                                <span class="req__title">Код подразделениея Росстат - 23-23-00</span>
+                                Росстат
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="h2 m-b-10">Паспортные данные</h2>
+                    <a data-fancybox href="#passport" class="req">
+                        <span class="req__title">Хачатурян Арсен Гигович</span>
+                        Паспорт: 0656-3773872
+                        Снилс: 202-222-877 35
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

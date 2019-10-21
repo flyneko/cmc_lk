@@ -1,0 +1,232 @@
+// width
+=r($width)
+  @media only screen and (max-width: $width+ "px")
+    @content
+
+=rmin($width)
+  @media only screen and (min-width: $width+ "px")
+    @content
+
+=rbet($min, $max)
+  @media only screen and (min-width: $min + "px") and (max-width: $max+ "px")
+    @content
+
+=rcomplex($map)
+  @each $arr in $map
+    @if (map-has-key($arr, 'min')) and (map-has-key($arr, 'max'))
+      @media only screen and (min-width: #{map-get($arr, 'min')}px) and (max-width: #{map-get($arr, 'max')}px)
+        @content
+    @else if (map-has-key($arr, 'min')) and (map-has-key($arr, 'max') == false)
+      @media only screen and (min-width: #{map-get($arr, 'min')}px)
+        @content
+    @else if (map-has-key($arr, 'max')) and  (map-has-key($arr, 'min') == false)
+      @media only screen and (max-width: #{map-get($arr, 'max')}px)
+        @content
+// height
+=rh($height)
+  @media only screen and (max-height: $height + "px")
+    @content
+
+=rhmin($height)
+  @media only screen and (min-height: $height + "px")
+    @content
+
+
+=hover
+  html:not(.touchevents) &:hover
+    @content
+
+=touch
+  html.touchevents &
+    @content
+
+=no-touch
+  html:not(.touchevents) &
+    @content
+
+%pseudo
+  position: relative
+  &:before,&:after
+    content: ' '
+    position: absolute
+    top: 0
+    left: 0
+=pseudo
+  @extend %pseudo
+
+=coverdiv
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+=cover
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: 50% 50%
+
+// retina, also available as +hdpi
+=retina
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)
+    @content
+
+
+=vcenter
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+
+=ivcenter
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+
+// font-family
+=font($name)
+  $random: random(999999999)
+  src: url('../fonts/#{$name}/#{$name}.woff2?#{$random}') format('woff2'), url('../fonts/#{$name}/#{$name}.woff?#{$random}') format('woff')
+
+=placeholder
+  &::-webkit-input-placeholder
+    @content
+  &::-moz-placeholder
+    @content
+  &:-ms-input-placeholder
+    @content
+  &:-moz-placeholder
+    @content
+  &::placeholder
+    @content
+
+=placeholder-color($color)
+  +placeholder
+    color: $color
+
+=gray
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale")
+  // Firefox 10+
+  filter: gray
+  // IE6-9
+  -webkit-filter: grayscale(100%)
+  // Chrome 19+ & Safari 6+
+  filter: progid:DXImageTransform.Microsoft.BasicImage(grayScale=1)
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(grayScale=1)"
+
+=gray-half
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='saturate' values='0.5'/></filter></svg>#grayscale")
+  // Firefox 10+
+  filter: gray alpha(opacity = 50)
+  // IE6-9
+  -webkit-filter: grayscale(50%)
+  // Chrome 19+ & Safari 6+
+
+=gray-zero
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0'/></filter></svg>#grayscale")
+  -webkit-filter: grayscale(0%)
+
+=unselectable
+  user-select: none
+
+=nosel
+  +unselectable
+
+=prevent-text
+  word-break: break-all
+  word-break: break-word
+  hyphens: auto
+
+=font-smoothing($val: antialiased)
+  font-smoothing: $val
+
+=selection
+  & ::selection
+    @content
+=sel
+  +selection
+
+=gpu
+  transform: translate3d(0, 0, 0)
+
+
+//triangle
+=arr($width, $height, $bg, $direction)
+  width: 0px
+  height: 0px
+  border-style: solid
+  @if $direction == t
+    border-width: 0 $width / 2 + px $height + px $width / 2 + px
+    border-color: transparent transparent $bg transparent
+  @if $direction == r
+    border-width: $height / 2 + px 0 $height / 2 + px $width + px
+    border-color: transparent transparent transparent $bg
+  @if $direction == b
+    border-width: $height + px $width / 2 + px 0 $width / 2 + px
+    border-color: $bg transparent transparent transparent
+  @if $direction == l
+    border-width: $height / 2 + px $width + px $height / 2 + px 0
+    border-color: transparent $bg transparent transparent
+  @if $direction == tl
+    border-width: $height + px $width + px 0 0
+    border-color: $bg transparent transparent transparent
+  @if $direction == tr
+    border-width: 0 $width + px $height + px 0
+    border-color: transparent $bg transparent transparent
+  @if $direction == br
+    border-width: 0 0 $height + px $width + px
+    border-color: transparent transparent $bg transparent
+  @if $direction == bl
+    border-width: $width + px 0 0 $height + px
+    border-color: transparent transparent transparent $bg
+
+
+
+@function convert-angle($value, $unit)
+  $convertable-units: deg grad turn rad
+  $conversion-factors: 1 (10grad/9deg) (1turn/360deg) (3.1415926rad/180deg)
+  @if index($convertable-units, unit($value)) and index($convertable-units, $unit)
+    @return $value / nth($conversion-factors, index($convertable-units, unit($value))) * nth($conversion-factors, index($convertable-units, $unit))
+
+  @warn "Cannot convert `#{unit($value)}` to `#{$unit}`."
+
+/// Test if `$value` is an angle
+/// @param {*} $value - Value to test
+/// @return {Bool}
+@function is-direction($value)
+  $is-direction: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value)
+  $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value))
+  @return $is-direction or $is-angle
+
+/// Convert a direction to legacy syntax
+/// @param {Keyword | Angle} $value - Value to convert
+/// @require {function} is-direction
+/// @require {function} convert-angle
+@function legacy-direction($value)
+  @if is-direction($value) == false
+    @warn "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be an angle or a direction"
+
+  $conversion-map: (to top          : bottom, to top right    : bottom left, to right top    : left bottom, to right        : left, to bottom right : top left, to right bottom : left top, to bottom       : top, to bottom left  : top right, to left bottom  : right top, to left         : right, to left top     : right bottom, to top left     : bottom right)
+
+  @if map-has-key($conversion-map, $value)
+    @return map-get($conversion-map, $value)
+
+  @return 90deg - convert-angle($value, 'deg')
+
+/// Mixin printing a linear-gradient
+/// as well as a plain color fallback
+/// and the `-webkit-` prefixed declaration
+/// @access public
+/// @param {String | List | Angle} $direction - Linear gradient direction
+/// @param {Arglist} $color-stops - List of color-stops composing the gradient
+=linear-gradient($direction, $color-stops...)
+  @if is-direction($direction) == false
+    $color-stops: ($direction, $color-stops)
+    $direction: 180deg
+
+  background: nth(nth($color-stops, 1), 1)
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops)
+  background: linear-gradient($direction, $color-stops)
+
+=fixWebkitOverflow
+  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC)

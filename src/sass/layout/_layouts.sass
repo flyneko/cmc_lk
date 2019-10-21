@@ -1,0 +1,60 @@
+.l-wrapper
+  max-width: #{$layout-width + ($layout-padding * 2)}px
+  margin: 0 auto
+  padding: 0 #{$layout-padding}px
+  width: 100%
+
+.l-main
+  display: flex
+  min-height: calc(100vh - #{$header-height}px)
+  &__aside
+    $animation-duration: .3s
+    flex-shrink: 0
+    padding-top: 20px
+    +r($md)
+      pointer-events: none
+      opacity: 0
+      transform: translateX(-100%)
+      position: fixed
+      transition: all ease $animation-duration
+      left: 0
+      z-index: 89
+      top: #{$header-height}px
+      height: calc(100% - #{$header-height}px)
+      background: #4272b6
+      padding-left: 20px
+      padding-right: 20px
+      width: 250px !important
+      &:before
+        position: fixed
+        left: 100%
+        top: 0
+        height: 100%
+        width: 999px
+        background: rgba($style-color4, 0.95)
+        content: ''
+        opacity: 0
+      &.is-nav-clicked
+        opacity: 1
+        transform: translateX(0)
+        pointer-events: auto
+        &:before
+          opacity: 1
+          transition: opacity ease $animation-duration
+          transition-delay: $animation-duration
+      .sticky
+        position: static
+    +rmin($md)
+      &.is-nav-collapsed
+        background: #4272b6
+        width: 75px
+        margin-left: -#{$layout-padding}px
+        margin-right: 30px
+    > div > *
+      margin-bottom: 15px
+      &:last-child
+        margin-bottom: 0
+  &__main
+    flex-grow: 1
+    min-width: 0
+    padding: 30px 0 50px

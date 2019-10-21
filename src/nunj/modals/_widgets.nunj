@@ -1,0 +1,12 @@
+<div class="modal p-b-0" id="widgets">
+    <h2 class="h2 modal__title">Отображаемые виджеты</h2>
+
+    <div>
+        {% for i in ['Деньги', 'Документы на продажу', 'Электронная отчетность ', 'Документы на покупку ', 'Контрагенты'] %}
+            <div class="modal-switcher">
+                <span>{{ i }}</span>
+                {{ chunks.switcher() }}
+            </div>
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "<%= fontName %>";
+  src: url('<%= fontPath %><%= fontName %>.eot?<%= random %>');
+  src: url('<%= fontPath %><%= fontName %>.eot?<%= random %>#iefix') format('eot'),
+    url('<%= fontPath %><%= fontName %>.woff2?<%= random %>') format('woff2'),
+    url('<%= fontPath %><%= fontName %>.woff?<%= random %>') format('woff'),
+    url('<%= fontPath %><%= fontName %>.ttf?<%= random %>') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+<% _.forEach(glyphs, function(glyph) { %>$<%= className %>-<%= glyph.name %>: "\<%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %>";
+<% }); %>
+
+%<%= className %> {
+  font-family: "<%= fontName %>";
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: auto;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.<%= className %> {
+  @extend %<%= className %>;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+<% _.forEach(glyphs, function(glyph) { %>.<%= className %>-<%= glyph.name %>:before { content: $<%= className %>-<%= glyph.name %>; }
+<% }); %>

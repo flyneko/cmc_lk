@@ -1,0 +1,87 @@
+.block-checkbox
+  display: inline-flex
+  &--block
+    width: 100%
+  input
+    display: none
+  input:checked + &__i
+    border-color: #41c8f1
+    color: $style-color4
+  &__i
+    @extend .blank
+    width: 100%
+    color: #95a3b5
+    display: flex
+    align-items: center
+    min-height: 90px
+    cursor: pointer
+    font-family: "ProximaNova"
+    font-weight: 600
+    border-color: #e2e9ef
+    transition: all ease .25s
+    &:hover
+      border-color: #afb6bb
+      color: $style-color4
+
+.checkbox
+  cursor: pointer
+  display: inline-flex
+  text-align: left
+  font-family: 'PTSans'
+  a
+    text-decoration: underline
+  input
+    display: none
+  input:checked + &__i, &--checked &__i
+    background: $style-color2
+    border-color: $style-color2
+    &:before
+      opacity: 1
+  input[type="checkbox"] + &__i
+    width: 15px
+    height: 15px
+    border-radius: 0
+    margin-top: 1px
+  &__text
+    padding-top: 1px
+    margin-left: 10px
+  &__i
+    background: #fff
+    display: inline-block
+    font-style: normal
+    width: 20px
+    height: 20px
+    position: relative
+    vertical-align: middle
+    border: 1px solid #dbe3e9
+    transition: all ease .2s
+    border-radius: 50%
+    flex-grow: 0
+    flex-shrink: 0
+    &:before
+      +vcenter
+      opacity: 0
+      @extend %ticon
+      content: $ticon-check-1
+      font-size: 10px
+      color: #ffffff
+      transition: all ease .3s
+
+.big-checkbox
+  @extend .checkbox
+  &__i
+    @extend .checkbox__i
+    margin-top: 7px
+  &__info
+    margin-left: 10px
+  &__img
+    margin-bottom: 10px
+    img
+      max-height: 37px
+  &__label
+    color: #27282a
+    display: block
+    margin-bottom: 5px
+    font-size: 16px
+  &__desc
+    color: #818385

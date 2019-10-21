@@ -1,0 +1,14 @@
+.tippy-tooltip
+  padding: 10px
+  font-size: 12px
+  color: #676a6c
+  background: #e2e9ef
+  border-radius: 3px
+  max-width: 300px !important
+  text-align: left
+  &[x-placement^=top] .tippy-arrow
+    +arr(16, 5, #e2e9ef, b)
+    bottom: -5px
+  &[x-placement^=bottom] .tippy-arrow
+    +arr(16, 5, #e2e9ef, t)
+    top: -5px

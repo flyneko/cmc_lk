@@ -1,0 +1,26 @@
+body:not(.fancybox-active) .compensate-for-scrollbar
+  margin-right: 0 !important
+
+.fancybox-bg
+  background: rgba($style-color4, 0.95)
+
+.fancybox-is-open .fancybox-bg
+  opacity: 1
+
+.fancybox-container
+  font-family: $font
+  z-index: 99
+
+.fancybox-content
+  overflow: visible !important
+
+.fancybox-slide--current
+  perspective: 800px
+
+.fancybox-slide--html
+  padding: 50px 20px
+  +r($xxs)
+    padding: 30px 20px
+
+.fancybox-navigation
+  display: none

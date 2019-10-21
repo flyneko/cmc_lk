@@ -1,0 +1,60 @@
+.carousel
+  position: relative
+  .swiper-container
+    margin: 0 -8px
+    padding: 0 8px
+  .swiper-prev, .swiper-next
+    position: absolute
+    color: $style-color2
+    cursor: pointer
+    font-size: 24px
+    width: 1em
+    height: 100%
+    top: 0
+    z-index: 9
+    transition: all ease .3s
+    &:hover
+      color: $style-color2
+    &:before
+      @extend %ticon
+      transition: all ease .3s
+      +vcenter
+  .swiper-prev
+    left: 0
+  .swiper-next
+    right: 0
+  .swiper-dots
+    margin-top: 30px
+    display: flex
+    justify-content: center
+    +r($xxs)
+      margin-top: 10px
+  .swiper-dot
+    width: 8px
+    height: 8px
+    background: #fff
+    border-radius: 50%
+    margin-right: 6px
+    &:not(.active)
+      cursor: pointer
+    &.active
+      background: $style-color2
+    &:last-child
+      margin-right: 0
+  .swiper-pagination-lock
+    display: none
+  .swiper-slide
+    height: auto
+.swiper-scrollbar
+  margin-top: 20px
+  position: static !important
+  background: #f1f7fc
+  height: 4px
+  border-radius: 2px
+  width: 100% !important
+  overflow: hidden
+  +r($xs)
+    margin-top: 15px
+  &-drag
+    background: $style-color2
+    border-radius: 2px

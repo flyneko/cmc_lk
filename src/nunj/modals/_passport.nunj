@@ -1,0 +1,82 @@
+<div class="modal" id="passport">
+    <h2 class="h2 modal__title">паспортные данные</h2>
+    <form autocomplete="off" class="form">
+        <div class="row">
+            <div class="col-xxs-4 col-12">
+                <label class="form__label">Фамилия</label>
+                <input class="input">
+            </div>
+            <div class="col-xxs-4 col-12">
+                <label class="form__label">Имя</label>
+                <input class="input">
+            </div>
+            <div class="col-xxs-4 col-12">
+                <label class="form__label">Отчество</label>
+                <input class="input">
+            </div>
+            <div class="col-xxs-8 col-12">
+                <label class="form__label">Гражданство</label>
+                <input class="input">
+            </div>
+            <div class="col-12">
+                <label class="form__label">Пол</label>
+                <div class="row">
+                    <div class="col-auto">
+                        {{ chunks.radio({ text: 'Мужчина', name: 'gender' }) }}
+                    </div>
+                    <div class="col-auto">
+                        {{ chunks.radio({ text: 'Женщина', name: 'gender' }) }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxs-4 col-12">
+                <label class="form__label">Дата рождения</label>
+                <div class="complex-input">
+                    <input class="input js-datepicker">
+                    <div class="complex-input__icon">
+                        {{ mixins.icon('calendar') }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxs-8 col-12">
+                <label class="form__label">Место рождения</label>
+                <input class="input">
+            </div>
+            <div class="col-sm-4 col-xxs-8 col-12">
+                <label class="form__label">Серия и номер паспорта:</label>
+                <input class="input">
+            </div>
+            <div class="col-sm-4 col-xxs-6 col-12">
+                <label class="form__label">Дата выдачи:</label>
+                <div class="complex-input">
+                    <input class="input js-datepicker">
+                    <div class="complex-input__icon">
+                        {{ mixins.icon('calendar') }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-xxs-6 col-12">
+                <label class="form__label">Код подразделения:</label>
+                <input class="input">
+            </div>
+            <div class="col-12">
+                <label class="form__label">Кем выдан:</label>
+                <input class="input">
+            </div>
+            <div class="col-xxs-4 col-8">
+                <label class="form__label">СНИЛС: <span data-interactive="true" title="Здесь будут показаны Ваши операции после создания р/с. Для удобства работы при создании р/с подключите интеграцию с банком." class="tooltip">{{ mixins.icon('question-circle') }}</span></label>
+                <input class="input">
+            </div>
+        </div>
+        <div class="form__buttons">
+            <div class="row">
+                <div class="col-xxs-auto col-12">
+                    <button type="submit" class="btn btn--block"><span>Сохранить</span></button>
+                </div>
+                <div class="col-xxs-auto col-12">
+                    <button type="reset" class="btn btn--block btn--outline"><span>Отменить</span></button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

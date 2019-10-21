@@ -1,0 +1,20 @@
+.contacts-buttons
+  display: inline-flex
+  align-items: center
+  margin: 0 -7px
+  +r($xxs)
+    margin: 0 -3px
+  &__item
+    padding: 0 7px
+    +r($xxs)
+      padding: 0 3px
+  &__link
+    display: block
+    line-height: 0
+    &:hover .icon, &.tippy-active .icon
+      fill: #99a0a5
+    .icon
+      font-size: 20px
+      fill: #d6dde3
+      +r($xxs)
+        font-size: 16px

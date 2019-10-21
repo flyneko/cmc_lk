@@ -1,0 +1,90 @@
+---
+title: Бланки
+---
+{% extends "layouts/_layout.nunj" %}
+{% block content %}
+    <div class="box">
+        <div class="box__head">
+            <h1 class="h1">бланки</h1>
+            <a href="#" class="link link-underline text-medium">{{ mixins.icon('catalog') }}<span>Каталог бланков</span></a>
+        </div>
+
+        <form autocomplete="off" class="m-b-25 complex-input">
+            <input class="input" placeholder="Введите ключевые слова для поиска бланка/документа...">
+            <button class="complex-input__icon" type="submit">
+                {{ mixins.icon('loupe') }}
+            </button>
+        </form>
+        
+        <div class="row-border p-t-0 p-b-40 m-b-35">
+            <h2 class="h2 m-b-10">Популярное</h2>
+            <div class="row">
+                {% for i in [
+                    'Справка о среднем заработке за последние три месяца по последнему месту работы (для службы занятости)',
+                    'Сведения об организации и численности работников организаций (мужчины 1959 г.р., женщины 1964 г.р.), не являющиеся пенсионерами',
+                    'Путевой лист грузового автомобиля (самостоятельно разработанная форма)',
+                    'Путевой лист легкового автомобиля (самостоятельно разработанная форма)',
+                    'Письмо директору, которое поможет бухгалтеру убедить его в целесообразности приобретения услуг "Бюро бухгалтера"',
+                    'Заявление о предоставлении ежегодного отпуска'
+                ] %}
+                    <div class="col-6">
+                        <div class="blank">
+                            <span class="blank__category">Образец</span>
+                            <a href="#" class="blank__name">{{ i }}</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="col-12 text-center">
+                    <a href="#" class="btn btn--round btn--lg btn--white btn--outline"><span>Показать еще</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-b-35">
+            <h2 class="h2 m-b-15">Недавно смотрели</h2>
+            <div class="carousel">
+                <div data-scroll="true" data-slides="[2]" class="swiper-container js-sample-carousel">
+                    <div class="swiper-wrapper">
+                        {% for i in range(1, 7) %}
+                            <div class="swiper-slide">
+                                <div class="blank">
+                                    <span class="blank__category">Разное</span>
+                                    <a href="#" class="blank__name">Справка о среднем заработке за последние три
+                                        месяца по последнему месту работы
+                                        (для службы занятости)</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="row align-items-center m-b-0">
+                <div class="col-auto">
+                    <h2 class="h2 m-r-20">Новое в бланках</h2>
+                </div>
+                <div class="col-auto">Сегодня 15 июня</div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="blank blank--announce">
+                        <a href="#" class="blank__name">
+                            Размещен образец трудового договора
+                            с водителем-экспедитором (работодатель – индивидуальный предприниматель).
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="blank blank--announce">
+                        <time class="blank__date">4 июля</time>
+                        <a href="#" class="blank__name">
+                            Размещен образец приказа о повышении тарифной ставки.
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,85 @@
+.aside
+  font-family: 'ProximaNova'
+  position: sticky
+  top: 65px
+  &__menu
+    font-size: 16px
+    &-item
+      display: flex
+      flex-direction: column
+    &-item.is-toggle-open &-sub
+      display: block
+      +rmin($md)
+        .is-nav-collapsed &
+          display: none
+    &-sub
+      display: none
+      padding-left: 30px
+      order: 1
+    &-sub &-item
+      margin-bottom: 10px
+      &:last-child
+        margin-bottom: 0
+    &-sub &-link
+      height: auto
+      font-size: 14px
+      font-weight: normal
+    &-sub + &-link
+      position: relative
+      &:before
+        +arr(7, 4, $style-color2, b)
+        +ivcenter
+        right: 0
+        content: ''
+      .is-toggle-open &:before
+        +arr(7, 4, $style-color2, t)
+    &-icon
+      margin-right: 10px
+      flex-shrink: 0
+      +rmin($md)
+        .is-nav-collapsed &
+          width: 75px
+          display: flex
+          justify-content: center
+          margin-right: 0
+      .icon
+        fill: #3cc7f2
+        font-size: 20px
+    &-link
+      display: flex
+      height: 45px
+      width: 100%
+      align-items: center
+      color: $style-color4
+      transition: all ease .25s
+      transition-property: color, padding-left
+      font-weight: 600
+      &:hover
+        color: $style-color2
+        padding-left: 7px
+      +r($md)
+        color: #fff
+      +rmin($md)
+        .is-nav-collapsed &
+          font-size: 0
+          color: #fff
+          &:before
+            display: none
+          &:hover
+            width: 230px
+            background: $style-color
+            color: #fff
+            font-size: 14px
+  &__footer
+    margin-top: 20px
+    padding-top: 30px
+    border-top: 1px solid #e2e9ef
+    +rmin($md)
+      .is-nav-collapsed &
+        display: none
+    &-item
+      margin-bottom: 10px
+    &-link
+      color: $style-color4
+      +r($md)
+        color: #fff

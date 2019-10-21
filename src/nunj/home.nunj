@@ -1,0 +1,406 @@
+---
+title: Главная
+modals: [widgets]
+---
+{% extends "layouts/_layout.nunj" %}
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <div class="widget">
+                <div class="widget__head">
+                    <h3 class="h3">Деньги</h3>
+                    <ul class="actions">
+                        <li class="actions__item"><a title="скрыть" href="#" class="actions__link">{{ mixins.icon('minus-circle') }}</a></li>
+                        <li class="actions__item"><a title="скрыть" href="#" class="actions__link js-widget-close">{{ mixins.icon('close-circle') }}</a></li>
+                    </ul>
+                </div>
+
+                <div class="row row-lg">
+                    <div class="col-md-6 col-12">
+                        <div class="widget__filters">
+                            <div>Все деньги в сервисе</div>
+                            <div>4 июля 2019</div>
+                            <b class="text-dark">900,50 <i class="tenge"></i></b>
+                        </div>
+
+                        <div class="row-border">
+                            <div class="table js-scroll">
+                                <table style="min-width: 350px;">
+                                    <tbody>
+                                    {% for i in ['Основной тенге в РК', 'Касса', 'Картой VISA', 'Банковская карта'] %}
+                                        <tr>
+                                            <td {% if not loop.first %}colspan="2"{% endif %}>{{ i }}</td>
+                                            {% if loop.first %}
+                                                <td>
+                                                    <img style="max-width: 75px;" src="./assets/img/payment-types/hb.png">
+                                                </td>
+                                            {% endif %}
+                                            <td class="text-right">600,00 <i class="tenge"></i></td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="row row-sm align-items-center">
+                                <div class="col-auto d-xxs-none">
+                                    <div class="btn-group">
+                                        <a href="#" class="btn" aria-expanded="false"><span>Добавить</span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            {% for i in ['Поступление', 'Списание', 'Обновить из банка'] %}
+                                                <li class="dropdown-menu__item">
+                                                    <a href="#" class="dropdown-menu__link">{{ i }}</a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                                {% for i in ['', 'Поступление', 'Списание', 'Обновить из банка'] %}
+                                    <div class="col-auto d-none d-xxs-block">
+                                        {% if loop.first %}
+                                            {{ mixins.icon('plus') }}
+                                        {% else %}
+                                            <a href="#" class="btn"><span>{{ i }}</span></a>
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-between">
+                            <div class="col-auto">Расчет УСН</div>
+                            <div class="col-auto">4 июля 2019</div>
+                            <div class="col-auto">
+                                <b class="link text-dark text-medium">{{ mixins.icon('check-circle') }} <span>15 000 <i class="tenge"></i></span> </b>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-12">
+                        <div class="widget__filters">
+                            <div>Основной рубли в РФ</div>
+                            <div><img style="max-width: 75px;" src="./assets/img/payment-types/hb.png"></div>
+                            <b class="text-dark">900,50 <i class="tenge"></i></b>
+                        </div>
+
+                        <div style="max-height: 205px;" class="table js-scroll">
+                            <table style="min-width: 350px;">
+                                <tbody>
+                                {% for i in range(1, 11) %}
+                                    <tr>
+                                        <td>13.06.19</td>
+                                        <td>Сивасов Игорь Анатольевич</td>
+                                        <td class="text-success text-right">16 500, 00 <i class="tenge"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>04.06.19</td>
+                                        <td>Гречка Петр Алексеевич</td>
+                                        <td class="text-danger text-right">- 20 000, 00 <i class="tenge"></i></td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="row justify-content-between">
+                            <div class="col-auto">Последняя выписка получена 28 июня</div>
+                            <div class="col-auto">
+                                <a href="#" class="text-blue">Импортировать</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-12">
+            <div class="widget">
+                <div class="widget__head">
+                    <h3 class="h3">Налоговый календарь</h3>
+                </div>
+                <div class="widget__filters">
+                    <div>
+                        <select data-class="select2-inline" class="js-select">
+                            <option>2019</option>
+                            <option>2018</option>
+                            <option>2017</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select data-class="select2-inline" class="js-select">
+                            <option>Актуальные</option>
+                            <option>Завершенные</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div data-scroll-nice style="max-height: 300px;" class="widget__inn js-scroll">
+                    <div class="tax-calendar table">
+                        <table>
+                            <tbody>
+                            {% for i in range(0, 20)%}
+                                <tr>
+                                    <td class="tax-calendar__period text-danger">
+                                        <div class="tax-calendar__date">
+                                            <span class="tax-calendar__date-day">01</span>
+                                            <span class="tax-calendar__date-month">янв</span>
+                                        </div>
+                                        −
+                                        <div class="tax-calendar__date">
+                                            <span class="tax-calendar__date-day">15</span>
+                                            <span class="tax-calendar__date-month">янв</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a href="#">Отчет в ПФР: СЗВ-М за декабрь 2016 года</a>
+                                    </td>
+                                    <td class="tax-calendar__more">
+                                        <a href="#">{{ mixins.icon('check') }}</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tax-calendar__period">
+                                        <div class="tax-calendar__date">
+                                            <span class="tax-calendar__date-day">01</span>
+                                            <span class="tax-calendar__date-month">янв</span>
+                                        </div>
+                                        −
+                                        <div class="tax-calendar__date">
+                                            <span class="tax-calendar__date-day">15</span>
+                                            <span class="tax-calendar__date-month">янв</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a href="#">Оплатить фиксированные взносы за II квартал 2017 года</a>
+                                    </td>
+                                    <td class="tax-calendar__more">
+                                        <a href="#">{{ mixins.icon('check') }}</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="widget">
+                <div class="widget__head">
+                    <h3 class="h3">Документы на продажу</h3>
+                    <ul class="actions">
+                        <li class="actions__item"><a title="скрыть" href="#" class="actions__link js-widget-close">{{ mixins.icon('close-circle') }}</a></li>
+                    </ul>
+                </div>
+                <div class="widget__filters m-b-0">
+                    <div>Счета</div>
+                    <div>
+                        <select data-class="select2-inline" class="js-select">
+                            <option>2019</option>
+                            <option>2018</option>
+                            <option>2017</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row-border">
+                    <div class="row text-center">
+                        <div class="col-xxs-4">
+                            <span class="text-dark">Выставленные</span>
+                            <div>770 850,88 <i class="tenge"></i></div>
+                        </div>
+                        <div class="col-xxs-4">
+                            <span class="text-dark">Неоплаченные</span>
+                            <div class="text-danger">510 600,00 <i class="tenge"></i></div>
+                        </div>
+                        <div class="col-xxs-4">
+                            <span class="text-dark">Без закрывающих</span>
+                            <div class="text-danger">770 850,88 <i class="tenge"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="h4">Недавно выставленные</h4>
+
+                <div class="js-tabs">
+                    {% set tabs = ['Все', 'Счет', 'Акты', 'Накладные'] %}
+                    <div class="tabs">
+                        <ul class="tabs__list">
+                            <li class="tabs__bar" data-tabs="bar"></li>
+                            {% for i in tabs %}
+                                <li class="tabs__item">
+                                    <a data-tabs="link" class="tabs__link {% if loop.first %}is-active{% endif %}" href="#{{ i }}"><span>{{ i | safe }}</span></a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% for q in tabs %}
+                        <div id="{{ q }}" data-tabs="pane" {% if loop.first %}class="is-active"{% endif %}>
+                            <div style="max-height: 100px;" class="table js-scroll">
+                                <table>
+                                    <tbody>
+                                    {% for i in range(1, 30) %}
+                                        <tr>
+                                            <td class="text-dark">№15</td>
+                                            <td>Сивасов Игорь Анатольевич</td>
+                                            <td class="text-right">34 000, 00 <i class="tenge"></i></td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="row row-sm align-items-center">
+                                <div class="col-auto d-xxs-none">
+                                    <div class="btn-group">
+                                        <a href="#" class="btn" aria-expanded="false"><span>Добавить</span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            {% for i in ['Счет', 'Накладная', 'Акт'] %}
+                                                <li class="dropdown-menu__item">
+                                                    <a href="#" class="dropdown-menu__link">{{ i }}</a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                {% for i in ['', 'Счет', 'Накладная', 'Акт'] %}
+                                    <div class="col-auto d-none d-xxs-block">
+                                        {% if loop.first %}
+                                            {{ mixins.icon('plus') }}
+                                        {% else %}
+                                            <a href="#" class="btn"><span>{{ i }}</span></a>
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-12">
+            <div class="row">
+                <div class="col-12">
+                    <div class="widget">
+                        <div class="widget__head">
+                            <h3 class="h3">Электронная отчетность</h3>
+                            <ul class="actions">
+                                <li class="actions__item"><a title="скрыть" href="#" class="actions__link js-widget-close">{{ mixins.icon('close-circle') }}</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="widget__inn">
+                            <a href="#" class="link">{{ mixins.icon('lightning') }} Подключите электронную отчетность</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="widget">
+                        <div class="widget__head">
+                            <h3 class="h3">Контрагенты</h3>
+                            <ul class="actions">
+                                <li class="actions__item"><a title="скрыть" href="#" class="actions__link js-widget-close">{{ mixins.icon('close-circle') }}</a></li>
+                            </ul>
+                        </div>
+
+                        <form autocomplete="off" class="m-b-20 complex-input">
+                            <input class="input" placeholder="Найти контрагента....">
+                            <button class="complex-input__icon" type="submit">
+                                {{ mixins.icon('loupe') }}
+                            </button>
+                        </form>
+
+                        <div class="table">
+                            <table>
+                                <tbody>
+                                {% for i in range(1, 4) %}
+                                    <tr>
+                                        <td>
+                                            <div class="text-medium text-dark">Кургинян Иван Алексеевич</div>
+                                            ИНН: 3542177166377
+                                        </td>
+                                        <td class="text-right">
+                                            {{ chunks.contacts_buttons() }}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="row row-sm">
+                            <div class="col-auto">
+                                <div class="btn-group">
+                                    <a href="#" class="btn" aria-expanded="false"><span>Добавить</span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        {% for i in ['Контрагента', 'Работника', 'Директора'] %}
+                                            <li class="dropdown-menu__item">
+                                                <a href="#" class="dropdown-menu__link">{{ i }}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <a href="#" class="btn"><span>проверка контрагентов</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-12">
+            <div class="widget widget--auto">
+                <div class="widget__head m-b-20">
+                    <h3 class="h3">Документы на покупку</h3>
+                    <ul class="actions">
+                        <li class="actions__item"><a title="скрыть" href="#" class="actions__link js-widget-close">{{ mixins.icon('close-circle') }}</a></li>
+                    </ul>
+                </div>
+                <h4 class="h4">Недавно выставленные</h4>
+                <div class="js-tabs">
+                    {% set tabs = ['Все', 'Счет', 'Акты', 'Накладные'] %}
+                    <div class="tabs">
+                        <ul class="tabs__list">
+                            <li class="tabs__bar" data-tabs="bar"></li>
+                            {% for i in tabs %}
+                                <li class="tabs__item">
+                                    <a data-tabs="link" class="tabs__link {% if loop.first %}is-active{% endif %}" href="#{{ i }}"><span>{{ i | safe }}</span></a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% for q in tabs %}
+                        <div id="{{ q }}" data-tabs="pane" {% if loop.first %}class="is-active"{% endif %}>
+                            <div class="empty-block">
+                                Не было создано ни одного документа
+                            </div>
+
+                            <div class="row row-sm align-items-center">
+                                <div class="col-auto">
+                                    {{ mixins.icon('plus') }}
+                                </div>
+                                {% for i in ['Накладная', 'Акт'] %}
+                                    <div class="col-auto">
+                                        <a href="#" class="btn"><span>{{ i }}</span></a>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="m-t-30 text-center">
+        <a data-fancybox href="#widgets" class="btn btn--light btn--lg btn--border btn--round btn--transparent">
+            {{ mixins.icon('widgets') }}
+            <span>настройка виджетов</span>
+        </a>
+    </div>
+{% endblock %}

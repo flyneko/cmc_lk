@@ -1,0 +1,32 @@
+.dropdown-menu
+  display: none
+  position: absolute
+  left: 0
+  min-width: 160px
+  background: #e2e9ef
+  border-radius: 0 0 5px 5px
+  padding: 6px 0 !important
+  top: 100%
+  z-index: 9
+  &--right
+    left: auto
+    right: 0
+    &.dropdown-menu--arrow:before
+      left: auto
+      right: 8px
+  &--arrow
+    &:before
+      position: absolute
+      bottom: 100%
+      left: 8px
+      +arr(15, 7, #e2e9ef, t)
+      content: ''
+  &__link
+    padding: 0 20px !important
+    display: flex
+    height: 22px
+    color: #676a6c
+    align-items: center
+    font-size: 12px
+    &:hover
+      background: #f1f7fc

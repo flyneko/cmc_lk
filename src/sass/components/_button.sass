@@ -1,0 +1,130 @@
+.btn-group
+  position: relative
+  .btn
+    &:after
+      content: ''
+      +arr(7, 4, $style-color2, b)
+      margin-left: 10px
+      margin-top: 2px
+  &.is-open
+    .btn
+      border-bottom-right-radius: 0
+      border-bottom-left-radius: 0
+    .dropdown-menu
+      display: block
+
+.btn
+  font-family: 'ProximaNova'
+  display: inline-flex
+  border: 2px solid $style-color4
+  align-items: center
+  justify-content: center
+  text-align: center
+  cursor: pointer
+  background: $style-color4
+  color: #ffffff
+  padding: 5px 20px
+  font-weight: 600
+  text-transform: uppercase
+  transition: all ease .25s
+  font-size: 11px
+  position: relative
+  min-height: 37px
+  border-radius: 3px
+  > span
+    padding-top: 3px
+  .icon
+    fill: $style-color2
+    font-size: 20px
+    flex-shrink: 0
+    &-close
+      width: 0.7em
+      height: 0.7em
+    & + span
+      margin-left: 10px
+  &:hover
+    background: #336396
+    border-color: #336396
+    color: #ffffff
+  &--outline
+    background-color: transparent !important
+    color: $style-color4
+    &.btn--blue
+      color: $style-color2
+    &:hover
+      border-color: $style-color2
+      background: $style-color2 !important
+      color: #fff
+      .icon
+        fill: #fff
+  &--xs
+    min-height: 27px
+    font-size: 10px
+    padding: 0 10px
+    .icon
+      font-size: 16px
+      margin-right: 4px
+  &--md
+    min-height: 44px
+    font-size: 13px
+    &.btn--round
+      border-radius: 22px
+  &--lg
+    min-height: 54px
+    padding-left: 40px
+    padding-right: 40px
+    font-size: 15px
+    &.btn--round
+      border-radius: 27px
+  &--black
+    background: #41484f
+    border-color: #41484f
+    &:hover
+      border-color: #5e656c
+      background: #5e656c
+    .icon
+      fill: #78818a
+  &--blue
+    background: $style-color2
+    border-color: $style-color2
+    &:hover
+      border-color: #64d2f4
+      background: #64d2f4
+  &--white
+    background: #fff
+    border-color: #fff
+    color: #5083cb
+    &.btn--outline
+      border-color: #f1f7fc
+    &:hover
+      color: #5083cb !important
+      background: #f1f7fc !important
+  &--red
+    border-color: #e35353
+    background: #e35353
+    &:hover
+      background: #e97474
+      border-color: #e97474
+  &--green
+    border-color: #599c5c
+    background: #599c5c
+    &:hover
+      background: #76b879
+      border-color: #76b879
+  &--light
+    background: #f1f7fc
+    border-color: #f1f7fc
+    color: $style-color4
+    &:hover
+      background: #f1f7fc
+    &.btn--border
+      border-color: #d6dde3
+      &:hover
+        border-color:  #3dc2eb
+  &--transparent
+    background-color: transparent
+    &:hover
+      background-color: transparent
+      color: $style-color4
+  &--block
+    width: 100%

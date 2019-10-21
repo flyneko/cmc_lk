@@ -1,0 +1,18 @@
+.alphabet-list
+  font-family: 'ProximaNova'
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr
+  grid-template-rows: repeat(41, 1fr)
+  grid-auto-flow: column
+  grid-row-gap: 5px
+  &__item
+    position: relative
+    padding-left: 30px
+    a
+      font-weight: 600
+  &__char
+    position: absolute
+    left: 0
+    top: 0
+    color: $style-color2
+    font-weight: 600

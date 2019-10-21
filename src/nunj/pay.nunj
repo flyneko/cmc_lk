@@ -1,0 +1,118 @@
+---
+title: Оплата
+---
+{% extends "layouts/_layout.nunj" %}
+{% block content %}
+    <div class="box">
+        <div class="box__head">
+            <div class="row row-sm align-items-center justify-content-between flex-grow">
+                <div class="col-auto"><h1 class="h1">оплата сервиса</h1></div>
+                <div class="col-auto">
+                    <div class="row row-sm">
+                        <div class="col-auto">
+                            <span class="link">{{ mixins.icon('clock') }} Оплачен до 13 июля 2019 г.</span>
+                        </div>
+                        <div class="col-auto">
+                            <a href="#" class="link text-blue">{{ mixins.icon('bill') }} История платежей</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <label class="form__label">Выберите тариф:</label>
+                <div class="row">
+                    {% for i in [
+                    'ИП, КХ и ТОО по упрощенному <br> режиму без сотрудников <br> (без НДС)',
+                    'ИП, КХ и ТОО до 5 сотрудников <br> (без НДС)',
+                    'ИП, КХ и ТОО по упрощенному <br> режиму до 50 сотрудников <br> (без НДС)'
+                    ] %}
+                        <div class="col-xxs-auto col-12">
+                            <label class="block-checkbox block-checkbox--block">
+                                <input type="radio" name="tariff">
+                                <span class="block-checkbox__i"> {{ i | safe }} </span>
+                            </label>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-md-6 col-xxs-8 col-12">
+                        <label class="form__label">Промо-код: <span data-interactive="true" title="Здесь будут показаны Ваши операции после создания р/с. Для удобства работы при создании р/с подключите интеграцию с банком." class="tooltip">{{ mixins.icon('question-circle') }}</span></label>
+                        <input class="input">
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-md-6 col-xxs-8 col-12">
+                        <label class="form__label">Срок и цена тарифа:</label>
+                        <select class="js-select">
+                            <option>1 год за 9 990 ₸</option>
+                            <option>1 год за 9 990 ₸</option>
+                            <option>1 год за 9 990 ₸</option>
+                            <option>1 год за 9 990 ₸</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="light-block">
+                    <label class="form__label">Способы оплаты:</label>
+                    <div class="row">
+                        {% for i in [
+                        { img: 'yk.png', label: 'Банковская карта (Яндекс.Касса)', desc: 'Visa, MasterCard или Мир' },
+                        { img: 'pc.png', label: 'Банковская карта (Payment.Center)', desc: 'Visa, MasterCard или Мир' },
+                        { img: 'cp.png', label: 'Банковская карта (CloudPayments)', desc: 'Visa, MasterCard или Мир' },
+                        { img: 'bank.png', label: 'Перевод на расчётный счёт', desc: 'Безналичный платёж через банк' },
+                        { img: 'hb.png', label: 'Квитанция Халык Банк', desc: 'Оплата в ближайшем отделении Сбербанка' },
+                        { img: 'psb.png', label: 'Промсвязьбанк', desc: 'Держателям счетов в Промсвязьбанке' },
+                        { img: false, label: 'Прочие способы оплаты', desc: 'Электронные деньги, терминалы и прочее' },
+                        { img: 'tff.png', label: 'Оплата в кредит (Провайдер - «Тинькофф Кредитные Системы» Банк (АО))', desc: 'Оплата заёмными средствами с помесячным погашением' }
+                        ] %}
+                            <div class="{% if loop.last %}col-sm-8 col-12{% else %}col-sm-4 col-xxs-6 col-12{% endif %}">
+                                <label class="big-checkbox">
+                                    <input type="radio" name="pay_type">
+                                    <div class="big-checkbox__i"></div>
+                                    <div class="big-checkbox__info">
+                                        <div class="big-checkbox__img">
+                                            {% if i.img %}
+                                                <img src="./assets/img/payment-types/{{ i.img }}">
+                                            {% else %}
+                                                <div class="row row-sm">
+                                                    {% for q in ['ym', 'wm', 'qiwi', 'es', 'so'] %}
+                                                        <div class="col-auto"><img src="./assets/img/payment-types/{{ q }}.png"></div>
+                                                    {% endfor %}
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                        <div class="big-checkbox__label">{{ i.label }}</div>
+                                        <div class="big-checkbox__desc">{{ i.desc }}</div>
+                                    </div>
+                                </label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <span class="form__label m-b-0">К оплате:</span>
+                <div class="pay-sum">9 990 <i class="tenge"></i></div>
+            </div>
+            <div class="col-12">
+                <div class="row row-sm align-items-center">
+                    <div class="col-xs-auto col-12">
+                        <button type="submit" class="btn btn--round btn--lg btn--block text-medium"><span>продолжить оплату</span></button>
+                    </div>
+                    <div class="col-xs-auto col-12">
+                        Нажимая на кнопку «Продолжить оплату», вы соглашаетесь <br>
+                        с <a href="#" class="link-underline"><span>условиями использования</span></a> сервиса «СМС».
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

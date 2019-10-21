@@ -1,0 +1,31 @@
+<div class="modal" id="tax-codes" style="max-width: 1000px;">
+    <h2 class="h2 modal__title">Код налогового органа</h2>
+
+    <table style="display: none;" data-search="1" data-without-select="1" class="js-table">
+        <thead>
+        <tr>
+            <th width="130" tabulator-headersort="1">КНО</th>
+            <th width="130" tabulator-headersort="1">БИН</th>
+            <th tabulator-formatter="html" tabulator-cssclass="left" tabulator-headersort="1">Наименование органа</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for i in range(1, 99) %}
+            <tr>
+                <td>123123</td>
+                <td>8493842308</td>
+                <td>
+                    <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque, cupiditate deleniti dolor dolores earum eum incidunt mollitia neque non optio provident quam quo quod rem rerum saepe tenetur, vel.</a>
+                </td>
+            </tr>
+            <tr>
+                <td>31231</td>
+                <td>23523523</td>
+                <td>
+                    <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur ex ipsum laudantium nesciunt, omnis qui quis totam velit voluptatem voluptatum.</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

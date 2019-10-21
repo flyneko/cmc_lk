@@ -1,0 +1,8 @@
+@import "../../../node_modules/sass-burger/burger"
+
+.hamburger
+  @include burger(20px, 3px, 4px, $style-color2)
+  &, &:before, &:after
+    border-radius: 2px
+  .is-active &
+    @include burger-to-cross

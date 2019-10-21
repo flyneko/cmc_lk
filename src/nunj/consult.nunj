@@ -1,0 +1,63 @@
+---
+title: Консультации
+---
+{% extends "layouts/_layout.nunj" %}
+{% block content %}
+    <div class="box">
+        <div class="m-b-10">
+            <a href="#" class="link-underline"><span>Вернуться назад</span></a>
+        </div>
+        <h1 class="h1">консультации — тема — <span class="text-gray">Новый вопрос</span></h1>
+
+        <h3 class="h3 m-b-10">Основные законодателльные изменения</h3>
+
+        <div class="m-b-20">
+            <a href="#" class="link-dotted"><span>Изменения законодательства</span></a>
+        </div>
+
+        <div class="row">
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row align-items-center">
+                            <div class="col-3">
+                                <label class="form__label m-b-0">Заголовок:</label>
+                            </div>
+                            <div class="col-9">
+                                <input class="input" type="text" placeholder="Кратко напишите тему вопроса">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-3">
+                                <label class="form__label m-b-0">Описание:</label>
+                            </div>
+                            <div class="col-9">
+                            <textarea style="height: 150px;" class="input m-b-20" placeholder="- верно выберите тему к которой относится ваш вопрос;
+- не задавайте более одного вопроса в одном запросе;
+- не прилагайте текст вопроса во вложенных файлах;
+- четко сформулируйте свой вопрос, отразите основные моменты
+  и проблемы"></textarea>
+                                <div class="m-b-20">
+                                    <input type="file" class="js-filepicker d-none">
+                                </div>
+                                <button type="submit" class="btn"><span>задать вопрос</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 text">
+                <p>
+                    Один из экспертов ответит на ваш вопрос о деятельности организации, хозяйственной ситуации, бухгалтерским проводкам, правилам расчетов налогово, взносов, кадровым и правовым процедурам.
+                </p>
+                <p>
+
+                    Технические вопросы задавайте в техподдержку:
+                    8 800 200 77 27 или <a href="#" class="link-underline"><span>support@cmc.kz</span></a>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

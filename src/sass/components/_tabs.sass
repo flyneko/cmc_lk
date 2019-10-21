@@ -1,0 +1,75 @@
+.tabs
+  position: relative
+  margin: 0 -11px 15px
+  overflow: hidden
+  &--lg
+    margin: 0 -16px 30px
+  &--lg &__item
+    padding: 0 16px
+  &--lg &__link
+    font-size: 18px
+  &__list
+    display: inline-flex
+    min-width: 100%
+    flex-wrap: nowrap
+    align-items: center
+    padding: 0 0 2px
+    &:before
+      content: ''
+      height: 1px
+      background: #e2e9ef
+      left: 11px
+      right: 11px
+      bottom: 0
+      position: absolute
+  &__bar
+    position: absolute
+    bottom: 0
+    left: 0
+    background: $style-color2
+    height: 2px
+    transition: all ease .3s
+  &__item
+    padding: 0 11px
+  &__link
+    color: #a3a5a6
+    position: relative
+    text-align: center
+    display: flex
+    height: 40px
+    align-items: center
+    white-space: nowrap
+    &.is-active
+      color: $style-color2
+
+.simple-tabs
+  position: relative
+  overflow: hidden
+  &__list
+    display: inline-flex
+    min-width: 100%
+    flex-wrap: nowrap
+    align-items: center
+  &__link
+    font-size: 16px
+    color: #a3a5a6
+    position: relative
+    text-align: center
+    display: flex
+    height: 37px
+    align-items: center
+    white-space: nowrap
+    padding: 0 13px
+    > span
+      border-bottom: 1px dotted #a3a5a6
+    &.is-active
+      color: $style-color2
+      background: #f1f7fc
+      > span
+        border-bottom-color: transparent
+
+div[data-tabs="pane"]
+  display: none
+  transition: all ease .3s
+  &.is-active
+    display: block

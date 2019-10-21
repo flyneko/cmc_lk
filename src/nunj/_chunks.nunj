@@ -1,0 +1,74 @@
+{% import "_mixins.nunj" as mixins %}
+
+{% macro checkbox(opts) %}
+    <label class="checkbox {% if opts.mod %}checkbox--{{ opts.mod }}{% endif %}">
+        <input type="checkbox" {% if opts.inputAttr %}{{ opts.inputAttr | safe }}{% endif %}>
+        <div class="checkbox__i"></div>
+        {% if opts.text %}
+            <div class="checkbox__text">{{ opts.text | safe }}</div>
+        {% endif %}
+    </label>
+{% endmacro %}
+
+{% macro radio(opts) %}
+    <label class="checkbox">
+        <input type="radio" {% if opts.name %}name="{{ opts.name }}"{% endif %}>
+        <div class="checkbox__i"></div>
+        {% if opts.text %}
+            <div class="checkbox__text">{{ opts.text | safe }}</div>
+        {% endif %}
+    </label>
+{% endmacro %}
+
+{% macro switcher(opts) %}
+    <label class="switcher">
+        <input type="checkbox" {% if opts.name %}name="{{ opts.name }}"{% endif %}>
+        <div class="switcher__i"></div>
+        {% if opts.text %}
+            <div class="switcher__text">{{ opts.text | safe }}</div>
+        {% endif %}
+    </label>
+{% endmacro %}
+
+{% macro breadcrumbs(arr) %}
+    <ul class="breadcrumbs">
+        {% for i in arr %}
+            <li class="breadcrumbs__item">
+                {% if not loop.last %}
+                    <a href="#" class="breadcrumbs__link"><span>{{ i }}</span></a>
+                {% else %}
+                    <span class="breadcrumbs__active">{{ i }}</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endmacro %}
+
+{% macro pagination() %}
+    <div class="pagination">
+        <ul class="pagination__list">
+            <li class="pagination__item"><a href="#" class="pagination__prev"></a></li>
+            <li class="pagination__item"><a href="#" class="pagination__link">1</a></li>
+            <li class="pagination__item"><span class="pagination__active">2</span></li>
+            <li class="pagination__item"><a href="#" class="pagination__link">3</a></li>
+            <li class="pagination__item"><a href="#" class="pagination__link">4</a></li>
+            <li class="pagination__item"><a href="#" class="pagination__link">5</a></li>
+            <li class="pagination__item"><a href="#" class="pagination__next"></a></li>
+        </ul>
+    </div>
+{% endmacro %}
+
+{% macro contacts_buttons() %}
+    <ul class="contacts-buttons">
+        {% for k, v in {
+        'Телефон': 'phone',
+        'Электронная почта': 'envelope',
+        'Skype': 'skype',
+        'Карточка': 'docs-copy'
+        } %}
+            <li class="contacts-buttons__item">
+                <a data-interactive="true" data-tippy content="{{ k }}: <br> <a href='#'>+7 8123 123 123</a>" href="#" class="contacts-buttons__link">{{ mixins.icon(v) }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endmacro %}

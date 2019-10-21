@@ -1,0 +1,47 @@
+{% set  list = [
+	{
+        url: 'home.html',
+		title: 'Главная'
+	},
+    {
+        url: 'req.html',
+		title: 'Реквизиты'
+	},
+    {
+        url: 'blanks-catalog.html',
+		title: 'Каталог бланков'
+	},
+    {
+        url: 'blanks.html',
+		title: 'Бланки'
+	},
+    {
+        url: 'contragents.html',
+		title: 'Контрагенты'
+	},
+    {
+        url: 'pay.html',
+		title: 'Оплата'
+	},
+    {
+        url: 'money.html',
+		title: 'Деньги'
+	},
+    {
+        url: 'consult.html',
+		title: 'Консультации'
+	},
+    {
+        url: 'documents.html',
+		title: 'Документы'
+	},
+    {
+        url: 'bill.html',
+		title: 'Счёт'
+	},
+    {
+        url: 'guideline.html',
+		title: 'Гайдлайн'
+	}
+]
+%}

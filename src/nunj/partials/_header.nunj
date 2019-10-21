@@ -1,0 +1,82 @@
+<header class="header">
+    <div class="l-wrapper">
+        <div class="header__inn">
+            <div class="header__left nav-sidebar">
+                <a class="js-nav-trigger" href="#">
+                    <div class="hamburger"></div>
+                </a>
+                <a href="." class="header__logo">
+                    <img src="./assets/img/logo.svg">
+                </a>
+            </div>
+            <div class="header__right">
+                <div class="header__pay d-none d-lg-flex">
+                    <a href="#" class="btn btn--block btn--round btn--blue btn--md">
+                        <span>оплата сервиса</span>
+                    </a>
+                </div>
+                <a href="#" class="header__balance d-none d-md-flex">
+                    {{ mixins.icon('wallet') }}
+                    <span>Основной счет: 900,50 <i class="tenge"></i></span>
+                </a>
+                <ul class="header__menu d-none d-sm-flex">
+                    {% for i in ['flag', 'chat', 'bell', 'coge'] %}
+                        <li class="header__menu-item">
+                            <a href="#" class="header__menu-link">
+                                {{ mixins.icon(i) }}
+                                <span class="hover">{{ mixins.icon(i ~ '-fill') }}</span>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <div class="header__auth">
+                    <div class="auth-menu js-dropdown">
+                        <div data-dropdown="trigger" class="auth-menu__user">
+                            <div class="auth-menu__user-pic">
+                                {{ mixins.icon('user-circle') }}
+                            </div>
+                            <div class="auth-menu__user-info d-none d-xxs-block">
+                                <div class="auth-menu__user-name"> ИП Сивасов И.А.</div>
+                            </div>
+                        </div>
+                        <div data-dropdown="drop" class="auth-menu__drop">
+                            <div class="auth-menu__info">
+                                <div class="auth-menu__user">
+                                    <div class="auth-menu__user-pic">
+                                        {{ mixins.icon('user-circle') }}
+                                    </div>
+                                    <div class="auth-menu__user-info">
+                                        <div class="auth-menu__user-name">maxlapteff@gmail.com</div>
+                                        <span class="auth-menu__access">Полный доступ</span>
+                                    </div>
+                                </div>
+                                <div class="auth-menu__tariff">
+                                    {{ mixins.icon('flag-circle') }}
+                                    ИП, КХ и ТОО по упрощенному
+                                    режиму без сотрудников
+                                    <span class="auth-menu__access">действует до 14.09.2019</span>
+                                </div>
+                            </div>
+                            <ul class="auth-menu__nav">
+                                {% for k, v in {
+                                    'Управление организацией': 'build',
+                                    'Реквизиты и настройки': 'doc-edit',
+                                    'Мои документы': 'docs-copy',
+                                    'Визитка': 'sticker',
+                                    'Выйти из сервиса': 'exit'
+                                } %}
+                                    <li class="auth-menu__nav-item {% if loop.last %}m-t-30{% endif %}">
+                                        <a href="#" class="auth-menu__nav-link">
+                                            {{ mixins.icon(v) }}
+                                            {{ k }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

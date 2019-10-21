@@ -1,0 +1,145 @@
+---
+title: Документы
+---
+{% extends "layouts/_layout.nunj" %}
+{% block content %}
+    <div class="box">
+        <div class="row">
+            <div class="col-12 d-sm-none">
+                <a data-target="#req-nav" href="#" class="js-toggle btn btn--md btn--round btn--block">{{ mixins.icon('list') }}<span>Открыть меню</span></a>
+            </div>
+            <div id="req-nav" class="col-xl-2 col-lg-3 col-sm-4 d-none d-sm-block">
+                <ul class="nav sticky">
+                    <li class="nav__item"><a href="#" class="nav__link is-active">Счета</a></li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link js-toggle" data-target-closest=".nav__item">Продажи</a>
+                        <ul class="nav__sub d-block">
+                            <li class="nav__item"><a href="#" class="nav__link">Акты</a></li>
+                            <li class="nav__item"><a href="#" class="nav__link">Накладные</a></li>
+                            <li class="nav__item"><a href="#" class="nav__link">Счета-фактуры</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__item"><a href="#" class="nav__link">Отчеты о розничной продаже</a></li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link js-toggle" data-target-closest=".nav__item">Покупки</a>
+                        <ul class="nav__sub d-block">
+                            <li class="nav__item"><a href="#" class="nav__link">Акты</a></li>
+                            <li class="nav__item"><a href="#" class="nav__link">Накладные</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xl-10 col-lg-9 col-sm-8 col-12">
+                <div class="m-b-20">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-auto">
+                            <div class="btn-group">
+                                <a href="#" class="btn" aria-expanded="false"><span>Добавить</span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    {% for i in ['Счет', 'Накладная', 'Акт'] %}
+                                        <li class="dropdown-menu__item">
+                                            <a href="#" class="dropdown-menu__link">{{ i }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <a href="#" class="link text-blue">{{ mixins.icon('doc-clock') }}<span>Скачать реестр документов</span></a>
+                        </div>
+                        <div class="col-auto">
+                            <form autocomplete="off" class="complex-input" id="documents-search">
+                                <input class="input" placeholder="Поиск">
+                                <button type="reset" class="complex-input__reset"></button>
+                                <span class="complex-input__icon"> {{ mixins.icon('loupe') }} </span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="m-b-10">
+                    <div class="row row-sm">
+                        <div class="col-auto">
+                            <div class="btn-group">
+                                <a href="#" class="btn btn--xs btn--black" aria-expanded="false"><span>Скачать</span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    {% for i in ['Счет', 'Накладная', 'Акт'] %}
+                                        <li class="dropdown-menu__item">
+                                            <a href="#" class="dropdown-menu__link">{{ i }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="btn-group">
+                                <a href="#" class="btn btn--xs btn--black" aria-expanded="false"><span>Создать</span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    {% for i in ['Счет', 'Накладная', 'Акт'] %}
+                                        <li class="dropdown-menu__item">
+                                            <a href="#" class="dropdown-menu__link">{{ i }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        {% for k, v in {
+                        'wallet-1': 'оплата',
+                        'envelope': 'E-mail',
+                        'loupe': 'онлайн',
+                        'docs-copy': 'копировать',
+                        'close': 'удалить'
+                        } %}
+                            <div class="col-auto">
+                                <a href="#" class="btn btn--xs btn--black">{{ mixins.icon(k) }} <span>{{ v }}</span></a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <table style="display: none;" data-items="20" data-search-form="#documents-search" class="js-table">
+                    <thead>
+                    <tr>
+                        <th width="40">№</th>
+                        <th width="90" tabulator-headersort="1">Дата</th>
+                        <th tabulator-formatter="html" tabulator-cssclass="left">Клиент</th>
+                        <th width="130">Сумма</th>
+                        <th width="80">Связ док</th>
+                        <th width="70" tabulator-formatter="html">Оплачен</th>
+                        <th width="70" tabulator-formatter="html">Закрыт</th>
+                        <th width="40" tabulator-formatter="html"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in range(1, 99) %}
+                        <tr>
+                            <td>20</td>
+                            <td>21.04.2019</td>
+                            <td>
+                                <a class="link-underline" href="#"><span>Мхитарян Вазген Гашевич</span></a>
+                            </td>
+                            <td>20 000,00</td>
+                            <td>1</td>
+                            <td><span class="text-danger">Нет</span></td>
+                            <td><span class="text-success">Да</span></td>
+                            <td><a href="#">{{ mixins.icon('chat-1', 'fill: #b5bbc1') }}</a></td>
+                        </tr>
+                        <tr>
+                            <td>44</td>
+                            <td>22.10.2019</td>
+                            <td>
+                                <a class="link-underline" href="#"><span>Гагарин Юрий Николаевич</span></a>
+                            </td>
+                            <td>56 000,00</td>
+                            <td>1</td>
+                            <td><span class="text-danger">Нет</span></td>
+                            <td><span class="text-success">Да</span></td>
+                            <td><a href="#">{{ mixins.icon('chat-1', 'fill: #b5bbc1') }}</a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

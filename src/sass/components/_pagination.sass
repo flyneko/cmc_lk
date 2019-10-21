@@ -1,0 +1,54 @@
+.pagination
+  text-align: center
+  margin-top: 30px
+  &__list
+    list-style: none
+    display: inline-flex
+    flex-wrap: wrap
+    align-items: center
+    justify-content: center
+    flex-grow: 1
+    border-radius: 5px
+    background: $style-color3
+    height: 40px
+  &__item
+    padding: 0 2px
+  &__link, &__active
+    height: 32px
+    width: 32px
+    font-family: 'PTSans'
+    display: flex
+    align-items: center
+    justify-content: center
+    text-align: center
+    color: #676a6c
+    font-size: 13px
+    border-radius: 50%
+    background-color: transparent
+    border: 0
+  &__link
+    position: relative
+  &__active
+    background: $style-color2 !important
+    color: #ffffff !important
+  &__prev, &__next
+    width: 32px
+    height: 32px
+    display: flex
+    align-items: center
+    border-radius: 50%
+    justify-content: center
+  &__prev, &__next, &__link
+    transition: all ease .2s
+    &:hover
+      color: $style-color
+      background: #fff
+  &__prev, &__next
+    &:before
+      content: ''
+  &__prev
+    &:before
+      +arr(4, 7, $style-color2, l)
+  &__next
+    &:before
+      +arr(4, 7, $style-color2, r)

@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "iconfont";
+  src: url('../fonts/iconfont/iconfont.eot?654748781');
+  src: url('../fonts/iconfont/iconfont.eot?654748781#iefix') format('eot'),
+    url('../fonts/iconfont/iconfont.woff2?654748781') format('woff2'),
+    url('../fonts/iconfont/iconfont.woff?654748781') format('woff'),
+    url('../fonts/iconfont/iconfont.ttf?654748781') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$ticon-arrow-down: "\EA01";
+$ticon-arrow-up: "\EA02";
+$ticon-check-1: "\EA03";
+$ticon-check-circle: "\EA04";
+$ticon-close: "\EA05";
+
+
+%ticon {
+  font-family: "iconfont";
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: auto;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ticon {
+  @extend %ticon;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.ticon-arrow-down:before { content: $ticon-arrow-down; }
+.ticon-arrow-up:before { content: $ticon-arrow-up; }
+.ticon-check-1:before { content: $ticon-check-1; }
+.ticon-check-circle:before { content: $ticon-check-circle; }
+.ticon-close:before { content: $ticon-close; }

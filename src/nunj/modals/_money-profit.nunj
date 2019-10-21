@@ -1,0 +1,181 @@
+<div class="modal" id="money-profit">
+    <h2 class="h2 modal__title m-b-10">доход от продажи товара</h2>
+
+    <div class="js-tabs">
+        {% set tabs = {
+            'От_клиента_напрямую': 'От клиента напрямую',
+            'Через_посредника': 'Через посредника',
+            'С_эквайрингом': 'С эквайрингом'
+        } %}
+        <div class="tabs tabs--lg">
+            <ul class="tabs__list">
+                <li class="tabs__bar" data-tabs="bar"></li>
+                {% for k, v in tabs %}
+                    <li class="tabs__item">
+                        <a data-tabs="link" class="tabs__link {% if loop.first %}is-active{% endif %}" href="#{{ k }}"><span>{{ v | safe }}</span></a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% for k, v in tabs %}
+            <div id="{{ k }}" data-tabs="pane" {% if loop.first %}class="is-active"{% endif %}>
+                <form autocomplete="off">
+                    <div class="form__row">
+                        <div class="row row-sm align-items-center">
+                            <div class="col-xs-4 col-12"><label class="form__label m-b-0">Деньги потрачены:</label></div>
+                            <div class="col-xs-8 col-12">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        {{ chunks.radio({ text: 'С расчетного счета' }) }}
+                                    </div>
+                                    <div class="col-auto">
+                                        {{ chunks.radio({ text: 'Наличными' }) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__row">
+                        <div class="row row-sm">
+                            <div class="col-xs-4 col-12"><label class="form__label m-b-0">Расчетный счет:	</label></div>
+                            <div class="col-xs-8 col-12">
+                                489074577350738053 в Алма-Аты N63477 ПАО
+                                Халык Банк
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__row">
+                        <div class="row row-sm align-items-center">
+                            <div class="col-xs-4 col-12"><label class="form__label m-b-0">От клиента:</label></div>
+                            <div class="col-xs-8 col-12">
+                                <input class="input" type="text" placeholder="ФИО клиента">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__row">
+                        <div class="row row-sm align-items-center">
+                            <div class="col-xs-4 col-12"><label class="form__label m-b-0">Потверждающие накладные:</label></div>
+                            <div class="col-xs-8 col-12">
+                                <div class="row row-sm">
+                                    <div class="col-auto">Нет</div>
+                                    <div class="col-auto"><a href="#" class="text-blue">Добавить накладную</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__row">
+                        <div class="row row-sm align-items-center">
+                            <div class="col-xs-4 col-12"><label class="form__label m-b-0">По договору:</label></div>
+                            <div class="col-xs-8 col-12">
+                                <input class="input" type="text" placeholder="№">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__row">
+                        <div class="row row-sm align-items-center">
+                            <div class="col-xs-4 col-12"><label class="form__label m-b-0">По счету:</label></div>
+                            <div class="col-xs-8 col-12">
+                                <input class="input" type="text" placeholder="№">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__row">
+                        <div class="row row-sm align-items-center">
+                            <div class="col-xs-4 col-12"><label class="form__label m-b-0">Сумма поступления на счет:</label></div>
+                            <div class="col-xs-8 col-12">
+                                <div class="complex-input">
+                                    <input class="input">
+                                    <div class="complex-input__icon"><i class="tenge"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__row">
+                        <div class="row row-sm align-items-center">
+                            <div class="col-xs-4 col-12"><label class="form__label m-b-0">Дата поступления на счет:</label></div>
+                            <div class="col-xs-8 col-12">
+                                <div class="complex-input">
+                                    <input class="input js-datepicker">
+                                    <div class="complex-input__icon">
+                                        {{ mixins.icon('calendar') }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__row">
+                        <div class="row row-sm align-items-center">
+                            <div class="col-xs-4 col-12"><label class="form__label m-b-0">Комиссия эквайринг:</label></div>
+                            <div class="col-xs-8 col-12">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <div class="complex-input">
+                                            <input class="input">
+                                            <div class="complex-input__icon"><i class="tenge"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-5">
+                                        <div class="complex-input">
+                                            <input class="input js-datepicker">
+                                            <div class="complex-input__icon"> {{ mixins.icon('calendar') }} </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__row">
+                        Итого оплата от покупателя по банковским картам: 21 500 <i class="tenge"></i> <span data-interactive="true" title="Здесь будут показаны Ваши операции после создания р/с. Для удобства работы при создании р/с подключите интеграцию с банком." class="tooltip">{{ mixins.icon('question-circle') }}</span>
+                    </div>
+                    <div class="form__row">
+                        <div class="row row-sm align-items-center">
+                            <div class="col-xs-4 col-12"><label class="form__label m-b-0">Номер платежного паручения:</label></div>
+                            <div class="col-xs-8 col-12">
+                                <input class="input" type="text" placeholder="№">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__row">
+                        <div class="row row-sm">
+                            <div class="col-xs-4 col-12"><label class="form__label m-b-0">Описание платежа:</label></div>
+                            <div class="col-xs-8 col-12">
+                                <textarea class="input"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__row">
+                        <div class="row row-sm align-items-center">
+                            <div class="col-12">
+                                <h3 class="h3">Что попадает в налоговую отчетность:</h3>
+                            </div>
+                            <div class="col-xs-4 col-12"><label class="form__label m-b-0">Cумма дохода, учитываемая в УСН</label></div>
+                            <div class="col-xs-8 col-12">
+                                <div class="complex-input">
+                                    <input class="input">
+                                    <div class="complex-input__icon"><i class="tenge"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__row">
+                        <div class="row align-items-center">
+                            <div class="col-xs-4 col-12">
+                                <a href="#" class="link-underline"><span>Сменить тип поступления</span></a>
+                            </div>
+                            <div class="col-xs-8 col-12">
+                                <div class="row">
+                                    <div class="col-xs-4 col-12">
+                                        <a href="#" class="btn btn--block"><span>Сохранить</span></a>
+                                    </div>
+                                    <div class="col-xs-8 col-12">
+                                        <a href="#" class="btn btn--block"><span>сохранить и создать новое</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+</div>

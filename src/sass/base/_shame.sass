@@ -1,0 +1,99 @@
+.sticky
+  position: sticky
+  top: 85px
+  z-index: 99
+
+.nav-sidebar
+  width: 180px
+  margin-right: 16px
+
+.tenge
+  font-family: 'Literal'
+  font-style: normal
+  font-weight: normal
+  &:before
+    content: '\20B8'
+
+.row-border
+  padding: 14px 0
+  border-bottom: 1px solid #e2e9ef
+  margin-bottom: 10px
+
+.modal-switcher
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 15px 30px
+  margin: 0 -30px
+  border-bottom: 1px solid #e2e9ef
+  &:last-child
+    border-bottom: 0
+
+.row-sm
+  margin: 0 -5px -10px
+  > *
+    padding: 0 5px 10px
+
+.row-lg
+  margin: 0 -24px -48px
+  > *
+    padding: 0 24px 48px
+
+.empty-block
+  text-align: center
+  background: $bg-color
+  padding: 20px
+  display: flex
+  min-height: 90px
+  align-items: center
+  justify-content: center
+  margin-bottom: 20px
+
+.btn-close
+  width: 47px
+  height: 47px
+  display: flex
+  align-items: center
+  border-radius: 50%
+  border: 0
+  background: $style-color2
+  justify-content: center
+  &:hover
+    background: #79d4f0
+    .icon
+      transform: rotate(90deg)
+  .icon
+    fill: #fff
+    font-size: 15px
+    transition: all ease .3s
+
+.tooltip
+  line-height: 0
+  cursor: pointer
+  transition: opacity ease .25s
+  &:hover
+    opacity: 0.6
+  .icon
+    font-size: 10px
+    fill:  $style-color2
+    vertical-align: top
+
+.pay-sum
+  font-size: 36px
+  color: $style-color2
+  font-weight: bold
+  font-family: 'ProximaNova'
+  line-height: 1
+
+.light-block
+  padding: 20px
+  border-radius: 5px
+  background: $style-color3
+
+.add-link
+  @extend .link
+  > span
+    color: $style-color2
+  .icon
+    fill: #676a6c
+    font-size: 12px
